@@ -45,6 +45,19 @@ class RegisterScreen extends StatelessWidget {
                 TextFormField(
                   obscureText: true,
                   decoration: InputDecoration(
+                    labelText: 'Phone',
+                  ),
+                  validator: (value) {
+                    if (value!.isEmpty) {
+                      return 'Please enter your phone number';
+                    }
+                    return null;
+                  },
+                ),
+                SizedBox(height: 12.0),
+                TextFormField(
+                  obscureText: true,
+                  decoration: InputDecoration(
                     labelText: 'Password',
                   ),
                   validator: (value) {

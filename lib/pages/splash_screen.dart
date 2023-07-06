@@ -32,7 +32,7 @@ class _SplashScreenState extends State<SplashScreen> {
             child: Image.asset(
               'assets/images/top.png', // Gambar di bagian atas halaman
               fit: BoxFit.cover,
-              height: MediaQuery.of(context).size.height * 0.1,
+              // height: MediaQuery.of(context).size.height * 0.1,
             ),
           ),
           Center(
@@ -56,13 +56,13 @@ class _SplashScreenState extends State<SplashScreen> {
               ],
             ),
           ),
-           Positioned(
+          Positioned(
             bottom: 0,
             left: 0,
             right: 0,
             child: Image.asset(
               'assets/images/buttom.png', // Gambar di bagian bawah halaman
-              height: MediaQuery.of(context).size.height * 0.1,
+              // height: MediaQuery.of(context).size.height * 0.1,
               fit: BoxFit.cover,
             ),
           ),
