@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'login_screen.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -40,17 +41,29 @@ class _SplashScreenState extends State<SplashScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Image.asset(
-                  'assets/images/Group 12561.png', // Logo kustom Anda
-                  width: 100.0,
-                  height: 100.0,
+                  'assets/images/LogoHome.png', // Logo kustom Anda
+                  width: 150.0,
+                  height: 150.0,
                 ),
-                SizedBox(height: 24.0),
+                SizedBox(height: 5.0),
                 Text(
-                  'My App',
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 24.0,
-                    fontWeight: FontWeight.bold,
+                  'Welcome To Alwatzer',
+                  style: GoogleFonts.poppins(
+                    textStyle: TextStyle(
+                      color: Colors.black,
+                      fontSize: 18.0,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+                Text(
+                  'Dementia Is Not a Hindrance To Freedom',
+                  style: GoogleFonts.poppins(
+                    textStyle: TextStyle(
+                      color: Colors.black,
+                      fontSize: 14.0,
+                      fontWeight: FontWeight.normal,
+                    ),
                   ),
                 ),
               ],
