@@ -19,12 +19,17 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomeScreen(),
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
       initialRoute: '/',
       routes: {
+        '/': (context) => SplashScreen(),
+        '/login': (context) => LoginScreen(),
+        '/register': (context) => RegisterScreen(),
         '/home': (context) => HomeScreen(),
         '/setting': (context) => SettingScreen(),
-        '/setProfile':(context) => SettingProfileScreen(),
+        '/setProfile': (context) => SettingProfileScreen(),
         // '/monitor': (context) => MonitorScreen(),
         // '/watch': (context) => WatchScreen(),
         // '/profile': (context) => ProfileScreen(),
@@ -32,21 +37,4 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-//Punya Mumtaz
-// class MyApp extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     return MaterialApp(
-//       title: 'My App',
-//       theme: ThemeData(
-//         primarySwatch: Colors.blue,
-//       ),
-//       initialRoute: '/',
-//       routes: {
-//         '/': (context) => SplashScreen(),
-//         '/login': (context) => LoginScreen(),
-//         '/register': (context) => RegisterScreen(),
-//       },
-//     );
-//   }
-// }
+// Punya Mumtaz
