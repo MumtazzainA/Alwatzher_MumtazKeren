@@ -158,7 +158,6 @@ class _HomeScreenState extends State<HomeScreen> {
             )
           ],
         ),
-        
         bottomNavigationBar: BottomNavigationBar(
           showUnselectedLabels: true,
           iconSize: 25,
@@ -172,7 +171,6 @@ class _HomeScreenState extends State<HomeScreen> {
               _currentIndex = index;
             });
 
-            // Logika penanganan ketika item ditekan
             switch (index) {
               case 0:
                 // Ketika item "Home" ditekan
@@ -204,7 +202,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 icon: Icon(Icons.person_pin_circle, color: Colors.red),
                 label: 'Monitor'),
             BottomNavigationBarItem(icon: Icon(Icons.watch), label: 'Watch'),
-            BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
+            // BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
           ],
         ),
       ),

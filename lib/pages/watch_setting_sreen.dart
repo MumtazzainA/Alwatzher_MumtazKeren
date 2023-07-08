@@ -6,23 +6,23 @@ import 'package:image_picker/image_picker.dart';
 import 'package:jam/controller/picture_controller.dart';
 import 'package:jam/pages/add_question.dart';
 import 'package:jam/pages/setting_profile_screen.dart';
-import 'package:jam/pages/watch_setting_sreen.dart';
+import 'package:jam/pages/setting_watch_profile_screen.dart';
 
-class SettingScreen extends StatefulWidget {
-  SettingScreen({super.key});
+class WatchSettingScreen extends StatefulWidget {
+  WatchSettingScreen({super.key});
 
   @override
-  State<SettingScreen> createState() => _SettingScreenState();
+  State<WatchSettingScreen> createState() => _WatchSettingScreenState();
 }
 
-class _SettingScreenState extends State<SettingScreen> {
+class _WatchSettingScreenState extends State<WatchSettingScreen> {
   File? pickedFile;
 
   ImagePicker imagePicker = ImagePicker();
 
   PictureController pictureController = Get.put(PictureController());
 
-  int _currentIndex = 1;
+  int _currentIndex = 3;
 
   @override
   Widget build(BuildContext context) {
@@ -95,14 +95,9 @@ class _SettingScreenState extends State<SettingScreen> {
                 ),
               ],
             ),
+            const SizedBox(height: 10),
             Text(
-              "Name",
-              style: GoogleFonts.poppins(
-                textStyle: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-              ),
-            ),
-            Text(
-              "Email@gmail.com",
+              "Mr. Abudabu",
               style: GoogleFonts.poppins(
                 textStyle: TextStyle(fontWeight: FontWeight.normal),
               ),
@@ -135,7 +130,7 @@ class _SettingScreenState extends State<SettingScreen> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => SettingProfileScreen()),
+                            builder: (context) => SettingWatchProfileScreen()),
                       );
                     },
                     trailing: Container(
@@ -144,7 +139,7 @@ class _SettingScreenState extends State<SettingScreen> {
                   ),
                   Divider(),
                   Text(
-                    'Preferences',
+                    'Fitur',
                     style: GoogleFonts.poppins(
                       textStyle: TextStyle(
                         fontSize: 15,
@@ -154,11 +149,11 @@ class _SettingScreenState extends State<SettingScreen> {
                   ),
                   ListTile(
                     leading: Container(
-                      child: Icon(Icons.dark_mode),
+                      child: Icon(Icons.help),
                     ),
-                    title: Text('Darkmode'),
+                    title: Text('Ask Alwatzer'),
                     onTap: () {
-                      //  profile settings
+                      //  Ask Alwatzer
                     },
                     trailing: Container(
                       child: const Icon(Icons.arrow_forward_ios),
@@ -166,31 +161,11 @@ class _SettingScreenState extends State<SettingScreen> {
                   ),
                   ListTile(
                     leading: Container(
-                      child: Icon(Icons.help),
+                      child: Icon(Icons.alarm_add),
                     ),
-                    title: Text('Help & Support'),
+                    title: Text('Alarm & Activity'),
                     onTap: () {
-                      //  help & supp
-                    },
-                    trailing: Container(
-                      child: const Icon(Icons.arrow_forward_ios),
-                    ),
-                  ),
-                  ListTile(
-                    leading: Container(child: Icon(Icons.lock)),
-                    title: Text('Change Password'),
-                    onTap: () {
-                      //  change password
-                    },
-                    trailing: Container(
-                      child: const Icon(Icons.arrow_forward_ios),
-                    ),
-                  ),
-                  ListTile(
-                    leading: Container(child: Icon(Icons.logout)),
-                    title: Text('Logout'),
-                    onTap: () {
-                      //  logout
+                      //  Alarm & Activity
                     },
                     trailing: Container(
                       child: const Icon(Icons.arrow_forward_ios),
