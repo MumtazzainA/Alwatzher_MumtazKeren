@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class QuestionScreen extends StatefulWidget {
-  const QuestionScreen({super.key});
+class AddressListFeature extends StatefulWidget {
+  const AddressListFeature({super.key});
 
   @override
-  State<QuestionScreen> createState() => _QuestionScreenState();
+  State<AddressListFeature> createState() => _ListScreenState();
 }
 
-class _QuestionScreenState extends State<QuestionScreen> {
+class _ListScreenState extends State<AddressListFeature> {
   int _currentIndex = 0;
   List<Color> catColors = [
     Color(0xff68B2DB),
@@ -55,7 +55,17 @@ class _QuestionScreenState extends State<QuestionScreen> {
                 ),
               ),
             ),
-          
+           Positioned(
+              top: 100.0,
+              left: 157.0,
+              child: Text(
+                'Watch List',
+                style: GoogleFonts.poppins(
+                    fontSize: 18.0,
+                    fontWeight: FontWeight.w500,// "Medium" weight
+                    ),
+              ),
+            ),
             Positioned(
               top: 16.0,
               right: 25.0,
@@ -81,7 +91,7 @@ class _QuestionScreenState extends State<QuestionScreen> {
                 width: 43,
                 height: 40,
                 child: Image.asset(
-                  'assets/images/chat.png',
+                  'assets/images/Group 12560.png',
                   fit: BoxFit.contain,
                 ),
               ),
@@ -123,7 +133,7 @@ class _QuestionScreenState extends State<QuestionScreen> {
                 width: 43,
                 height: 40,
                 child: Image.asset(
-                  'assets/images/chat.png',
+                  'assets/images/Group 12560.png',
                   fit: BoxFit.contain,
                 ),
               ),
@@ -164,7 +174,7 @@ class _QuestionScreenState extends State<QuestionScreen> {
                 width: 43,
                 height: 40,
                 child: Image.asset(
-                  'assets/images/chat.png',
+                  'assets/images/Group 12560.png',
                   fit: BoxFit.contain,
                 ),
               ),
@@ -205,7 +215,7 @@ class _QuestionScreenState extends State<QuestionScreen> {
                 width: 43,
                 height: 40,
                 child: Image.asset(
-                  'assets/images/chat.png',
+                  'assets/images/Group 12560.png',
                   fit: BoxFit.contain,
                 ),
               ),
@@ -239,19 +249,42 @@ class _QuestionScreenState extends State<QuestionScreen> {
                 ),
               ),
             ),
+            Positioned(
+              top: 400.0,
+              left:25.0 ,
+              child: SizedBox(
+                width: 43,
+                height: 40,
+                child: Image.asset(
+                  'assets/images/Group 12560.png',
+                  fit: BoxFit.contain,
+                ),
+              ),
+            ),
              Positioned(
-              bottom: -40,
-              right:147.0,
+              top: 410.0,
+              left: 100.0,
+              child: Text(
+                'Alwatzher Series 5',
+                style: GoogleFonts.inter(
+                    fontSize: 16.0,
+                    fontWeight: FontWeight.w500,// "Medium" weight
+                    ),
+              ),
+            ),
+             Positioned(
+              top: 413.0,
+              right:30.0,
               child: GestureDetector(
                 onTap: () {
                   // Handle button tap
                   // Add your desired functionality here
                 },
                 child: SizedBox(
-                  width: 100.0,
-                  height: 100.0,
+                  width: 16.01,
+                  height: 15.0,
                   child: Image.asset(
-                    'assets/images/alarm.png',
+                    'assets/images/Vector.png',
                     fit: BoxFit.contain,
                   ),
                 ),

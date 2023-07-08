@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class ChooseScreen extends StatefulWidget {
-  const ChooseScreen({super.key});
+class WatchListScreen extends StatefulWidget {
+  const WatchListScreen({super.key});
 
   @override
-  State<ChooseScreen> createState() => _ChooseScreenState();
+  State<WatchListScreen> createState() => _ListScreenState();
 }
 
-class _ChooseScreenState extends State<ChooseScreen> {
+class _ListScreenState extends State<WatchListScreen> {
   int _currentIndex = 0;
   List<Color> catColors = [
     Color(0xff68B2DB),
@@ -43,26 +43,26 @@ class _ChooseScreenState extends State<ChooseScreen> {
                 ),
               ),
             ),
-            Positioned(
-              top: 12.5,
-              left: 45.0,
-              child: Text(
-                'Smartwatch Profile',
-                style: GoogleFonts.inter(
-                  fontSize: 16.0,
-                  fontWeight: FontWeight.w500, // "Medium" weight
+             Positioned(
+              top: 20.0,
+              left:167.0 ,
+              child: SizedBox(
+                width: 81,
+                height: 77,
+                child: Image.asset(
+                  'assets/images/Logo.png',
+                  fit: BoxFit.contain,
                 ),
               ),
             ),
-            Positioned(
-              top: 60,
-              left: 25.0,
+           Positioned(
+              top: 100.0,
+              left: 157.0,
               child: Text(
-                'SmartWatch',
-                style: GoogleFonts.inter(
-                    fontSize: 20.0,
-                    fontWeight: FontWeight.w500,
-                    color: Colors.grey[400] // "Medium" weight
+                'Watch List',
+                style: GoogleFonts.poppins(
+                    fontSize: 18.0,
+                    fontWeight: FontWeight.w500,// "Medium" weight
                     ),
               ),
             ),
@@ -85,7 +85,7 @@ class _ChooseScreenState extends State<ChooseScreen> {
               ),
             ),
             Positioned(
-              top: 130.0,
+              top: 160.0,
               left:25.0 ,
               child: SizedBox(
                 width: 43,
@@ -97,7 +97,7 @@ class _ChooseScreenState extends State<ChooseScreen> {
               ),
             ),
              Positioned(
-              top: 140.0,
+              top: 170.0,
               left: 100.0,
               child: Text(
                 'Alwatzher Series 1',
@@ -108,7 +108,7 @@ class _ChooseScreenState extends State<ChooseScreen> {
               ),
             ),
              Positioned(
-              top: 143.0,
+              top: 173.0,
               right:30.0,
               child: GestureDetector(
                 onTap: () {
@@ -127,7 +127,7 @@ class _ChooseScreenState extends State<ChooseScreen> {
             ),
              
              Positioned(
-              top: 200.0,
+              top: 220.0,
               left:25.0 ,
               child: SizedBox(
                 width: 43,
@@ -139,7 +139,7 @@ class _ChooseScreenState extends State<ChooseScreen> {
               ),
             ),
              Positioned(
-              top: 210.0,
+              top: 230.0,
               left: 100.0,
               child: Text(
                 'Alwatzher Series 2',
@@ -150,7 +150,7 @@ class _ChooseScreenState extends State<ChooseScreen> {
               ),
             ),
              Positioned(
-              top: 213.0,
+              top: 233.0,
               right:30.0,
               child: GestureDetector(
                 onTap: () {
@@ -168,7 +168,7 @@ class _ChooseScreenState extends State<ChooseScreen> {
               ),
             ),
             Positioned(
-              top: 270.0,
+              top: 280.0,
               left:25.0 ,
               child: SizedBox(
                 width: 43,
@@ -180,7 +180,7 @@ class _ChooseScreenState extends State<ChooseScreen> {
               ),
             ),
              Positioned(
-              top: 280.0,
+              top: 290.0,
               left: 100.0,
               child: Text(
                 'Alwatzher Series 3',
@@ -232,7 +232,7 @@ class _ChooseScreenState extends State<ChooseScreen> {
               ),
             ),
              Positioned(
-              top: 363.0,
+              top: 353.0,
               right:30.0,
               child: GestureDetector(
                 onTap: () {
@@ -250,7 +250,7 @@ class _ChooseScreenState extends State<ChooseScreen> {
               ),
             ),
             Positioned(
-              top: 410.0,
+              top: 400.0,
               left:25.0 ,
               child: SizedBox(
                 width: 43,
@@ -262,7 +262,7 @@ class _ChooseScreenState extends State<ChooseScreen> {
               ),
             ),
              Positioned(
-              top: 420.0,
+              top: 410.0,
               left: 100.0,
               child: Text(
                 'Alwatzher Series 5',
@@ -273,7 +273,7 @@ class _ChooseScreenState extends State<ChooseScreen> {
               ),
             ),
              Positioned(
-              top: 433.0,
+              top: 413.0,
               right:30.0,
               child: GestureDetector(
                 onTap: () {

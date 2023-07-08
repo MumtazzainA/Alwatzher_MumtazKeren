@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:jam/pages/connect_screen.dart';
+import 'package:jam/pages/list_of_question_screen.dart';
+import 'package:jam/pages/list_of_reminder_feature_screen.dart';
+import 'package:jam/pages/list_of_watch_address_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -10,6 +14,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int _currentIndex = 0;
+  int _currentIndex2 = 0;
   List catNames = [
     "Connect",
     'Ask Alwatzer',
@@ -126,27 +131,88 @@ class _HomeScreenState extends State<HomeScreen> {
                             childAspectRatio: 1.1,
                           ),
                           itemBuilder: (context, index) {
-                            return Column(
-                              children: [
-                                Container(
-                                  height: 60,
-                                  width: 60,
-                                  decoration: BoxDecoration(
-                                    color: catColors[index],
-                                    shape: BoxShape.circle,
+                            return GestureDetector(
+                              onTap: () {
+                                setState(() {
+                                  _currentIndex2 = index;
+                                });
+                                switch (index) {
+                                  case 0:
+                                    // Ketika item "Connect" ditekan
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              ConnectScreen()),
+                                    );
+                                    break;
+                                  case 1:
+                                    // Ketika item "Ask" ditekan
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              QuestionListScreen()),
+                                    );
+                                    break;
+                                  case 2:
+                                    // Ketika item "Reminder" ditekan
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              ReminderListScreen()),
+                                    );
+                                    break;
+                                  // case 3:
+                                  //   // Ketika item "Information" ditekan
+                                  //   Navigator.push(
+                                  //     context,
+                                  //     MaterialPageRoute(
+                                  //         builder: (context) => ConnectScreen()),
+                                  //   );
+                                  //   break;
+                                  // case 4:
+                                  //   // Ketika item "Emergency" ditekan
+                                  //   Navigator.push(
+                                  //     context,
+                                  //     MaterialPageRoute(
+                                  //         builder: (context) => ConnectScreen()),
+                                  //   );
+                                  //   break;
+                                  case 5:
+                                    // Ketika item "Address" ditekan
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              AddressListFeature()),
+                                    );
+                                    break;
+                                }
+                              },
+                              child: Column(
+                                children: [
+                                  Container(
+                                    height: 60,
+                                    width: 60,
+                                    decoration: BoxDecoration(
+                                      color: catColors[index],
+                                      shape: BoxShape.circle,
+                                    ),
+                                    child: Center(child: catIcons[index]),
                                   ),
-                                  child: Center(child: catIcons[index]),
-                                ),
-                                SizedBox(height: 10),
-                                Text(
-                                  catNames[index],
-                                  style: TextStyle(
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.w400,
-                                    color: Colors.black,
-                                  ),
-                                )
-                              ],
+                                  SizedBox(height: 10),
+                                  Text(
+                                    catNames[index],
+                                    style: TextStyle(
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.w400,
+                                      color: Colors.black,
+                                    ),
+                                  )
+                                ],
+                              ),
                             );
                           },
                         ),

@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class ListScreen extends StatefulWidget {
-  const ListScreen({super.key});
+class AskAlwatzerListScreen extends StatefulWidget {
+  const AskAlwatzerListScreen({super.key});
 
   @override
-  State<ListScreen> createState() => _ListScreenState();
+  State<AskAlwatzerListScreen> createState() => _ListAskAlwatzerScreenState();
 }
 
-class _ListScreenState extends State<ListScreen> {
+class _ListAskAlwatzerScreenState extends State<AskAlwatzerListScreen> {
   int _currentIndex = 0;
   List<Color> catColors = [
     Color(0xff68B2DB),
@@ -57,9 +57,9 @@ class _ListScreenState extends State<ListScreen> {
             ),
            Positioned(
               top: 100.0,
-              left: 157.0,
+              left: 65.0,
               child: Text(
-                'Watch List',
+                'Set Your Question And Answer',
                 style: GoogleFonts.poppins(
                     fontSize: 18.0,
                     fontWeight: FontWeight.w500,// "Medium" weight

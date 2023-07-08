@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_login/flutter_login.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'home_screen.dart';
 
 const users = const {
@@ -43,8 +44,9 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FlutterLogin(
-      title: 'ECORP',
-      logo: AssetImage('assets/images/halo.png'),
+      title: 'Alwatzer',
+      theme: LoginTheme(titleStyle: GoogleFonts.poppins(textStyle: TextStyle(fontWeight: FontWeight.bold)),),
+      logo: AssetImage('assets/images/LogoHome.png'),
       onLogin: _authUser,
       onSignup: _signupUser,
       onSubmitAnimationCompleted: () {

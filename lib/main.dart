@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:jam/pages/home_screen.dart';
+import 'package:jam/pages/list_of_watch_profile_screen.dart';
 import 'package:jam/pages/setting_profile_screen.dart';
 import 'pages/setting_screen.dart';
 import 'pages/splash_screen.dart';
@@ -31,7 +32,7 @@ class MyApp extends StatelessWidget {
         '/setting': (context) => SettingScreen(),
         '/setProfile': (context) => SettingProfileScreen(),
         // '/monitor': (context) => MonitorScreen(),
-        // '/watch': (context) => WatchScreen(),
+        '/watch': (context) => WatchListScreen(),
         // '/profile': (context) => ProfileScreen(),
       },
     );

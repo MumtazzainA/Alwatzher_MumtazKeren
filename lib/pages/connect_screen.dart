@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:jam/pages/connect2_screen.dart';
 
 class ConnectScreen extends StatefulWidget {
   const ConnectScreen({super.key});
@@ -86,7 +87,7 @@ class _ConnectScreenState extends State<ConnectScreen> {
             ),
             Positioned(
               top: 130.0,
-              left:25.0 ,
+              left: 25.0,
               child: SizedBox(
                 width: 43,
                 height: 40,
@@ -96,24 +97,27 @@ class _ConnectScreenState extends State<ConnectScreen> {
                 ),
               ),
             ),
-             Positioned(
+            Positioned(
               top: 140.0,
               left: 100.0,
               child: Text(
                 'Alwatzher Series 1',
                 style: GoogleFonts.inter(
-                    fontSize: 16.0,
-                    fontWeight: FontWeight.w500,// "Medium" weight
-                    ),
+                  fontSize: 16.0,
+                  fontWeight: FontWeight.w500, // "Medium" weight
+                ),
               ),
             ),
-             Positioned(
+            Positioned(
               top: 143.0,
-              right:30.0,
+              right: 30.0,
               child: GestureDetector(
                 onTap: () {
-                  // Handle button tap
-                  // Add your desired functionality here
+                  print(1);
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => Connect2Screen()),
+                  );
                 },
                 child: SizedBox(
                   width: 16.01,
@@ -125,10 +129,9 @@ class _ConnectScreenState extends State<ConnectScreen> {
                 ),
               ),
             ),
-             
-             Positioned(
+            Positioned(
               top: 200.0,
-              left:25.0 ,
+              left: 25.0,
               child: SizedBox(
                 width: 43,
                 height: 40,
@@ -138,20 +141,20 @@ class _ConnectScreenState extends State<ConnectScreen> {
                 ),
               ),
             ),
-             Positioned(
+            Positioned(
               top: 210.0,
               left: 100.0,
               child: Text(
                 'Alwatzher Series 2',
                 style: GoogleFonts.inter(
-                    fontSize: 16.0,
-                    fontWeight: FontWeight.w500,// "Medium" weight
-                    ),
+                  fontSize: 16.0,
+                  fontWeight: FontWeight.w500, // "Medium" weight
+                ),
               ),
             ),
-             Positioned(
+            Positioned(
               top: 213.0,
-              right:30.0,
+              right: 30.0,
               child: GestureDetector(
                 onTap: () {
                   // Handle button tap
@@ -169,7 +172,7 @@ class _ConnectScreenState extends State<ConnectScreen> {
             ),
             Positioned(
               top: 270.0,
-              left:25.0 ,
+              left: 25.0,
               child: SizedBox(
                 width: 43,
                 height: 40,
@@ -179,20 +182,20 @@ class _ConnectScreenState extends State<ConnectScreen> {
                 ),
               ),
             ),
-             Positioned(
+            Positioned(
               top: 280.0,
               left: 100.0,
               child: Text(
                 'Alwatzher Series 3',
                 style: GoogleFonts.inter(
-                    fontSize: 16.0,
-                    fontWeight: FontWeight.w500,// "Medium" weight
-                    ),
+                  fontSize: 16.0,
+                  fontWeight: FontWeight.w500, // "Medium" weight
+                ),
               ),
             ),
-             Positioned(
+            Positioned(
               top: 293.0,
-              right:30.0,
+              right: 30.0,
               child: GestureDetector(
                 onTap: () {
                   // Handle button tap
@@ -210,7 +213,7 @@ class _ConnectScreenState extends State<ConnectScreen> {
             ),
             Positioned(
               top: 340.0,
-              left:25.0 ,
+              left: 25.0,
               child: SizedBox(
                 width: 43,
                 height: 40,
@@ -220,20 +223,20 @@ class _ConnectScreenState extends State<ConnectScreen> {
                 ),
               ),
             ),
-             Positioned(
+            Positioned(
               top: 350.0,
               left: 100.0,
               child: Text(
                 'Alwatzher Series 4',
                 style: GoogleFonts.inter(
-                    fontSize: 16.0,
-                    fontWeight: FontWeight.w500,// "Medium" weight
-                    ),
+                  fontSize: 16.0,
+                  fontWeight: FontWeight.w500, // "Medium" weight
+                ),
               ),
             ),
-             Positioned(
+            Positioned(
               top: 363.0,
-              right:30.0,
+              right: 30.0,
               child: GestureDetector(
                 onTap: () {
                   // Handle button tap
@@ -251,7 +254,7 @@ class _ConnectScreenState extends State<ConnectScreen> {
             ),
             Positioned(
               top: 410.0,
-              left:25.0 ,
+              left: 25.0,
               child: SizedBox(
                 width: 43,
                 height: 40,
@@ -261,20 +264,20 @@ class _ConnectScreenState extends State<ConnectScreen> {
                 ),
               ),
             ),
-             Positioned(
+            Positioned(
               top: 420.0,
               left: 100.0,
               child: Text(
                 'Alwatzher Series 5',
                 style: GoogleFonts.inter(
-                    fontSize: 16.0,
-                    fontWeight: FontWeight.w500,// "Medium" weight
-                    ),
+                  fontSize: 16.0,
+                  fontWeight: FontWeight.w500, // "Medium" weight
+                ),
               ),
             ),
-             Positioned(
+            Positioned(
               top: 433.0,
-              right:30.0,
+              right: 30.0,
               child: GestureDetector(
                 onTap: () {
                   // Handle button tap

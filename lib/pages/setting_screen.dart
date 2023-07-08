@@ -5,8 +5,12 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:jam/controller/picture_controller.dart';
 import 'package:jam/pages/add_question.dart';
+import 'package:jam/pages/list_of_ask_feature_screen.dart';
 import 'package:jam/pages/setting_profile_screen.dart';
 import 'package:jam/pages/watch_setting_sreen.dart';
+
+import 'list_of_question_screen.dart';
+import 'list_of_watch_profile_screen.dart';
 
 class SettingScreen extends StatefulWidget {
   SettingScreen({super.key});
@@ -136,6 +140,7 @@ class _SettingScreenState extends State<SettingScreen> {
                         context,
                         MaterialPageRoute(
                             builder: (context) => SettingProfileScreen()),
+                            
                       );
                     },
                     trailing: Container(

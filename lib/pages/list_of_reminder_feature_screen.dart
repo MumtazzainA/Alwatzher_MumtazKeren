@@ -1,14 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class StelJwbScreen extends StatefulWidget {
-  const StelJwbScreen({super.key});
+class ReminderListScreen
+ extends StatefulWidget {
+  const ReminderListScreen
+  ({super.key});
 
   @override
-  State<StelJwbScreen> createState() => _StelJwbScreenState();
+  State<ReminderListScreen
+  > createState() => _StelScreenState();
 }
 
-class _StelJwbScreenState extends State<StelJwbScreen> {
+class _StelScreenState extends State<ReminderListScreen
+> {
   int _currentIndex = 0;
   List<Color> catColors = [
     Color(0xff68B2DB),
@@ -57,9 +61,9 @@ class _StelJwbScreenState extends State<StelJwbScreen> {
             ),
            Positioned(
               top: 100.0,
-              left: 65.0,
+              left: 100.0,
               child: Text(
-                'Set Your Question And Answer',
+                'Set Your Family Activity',
                 style: GoogleFonts.poppins(
                     fontSize: 18.0,
                     fontWeight: FontWeight.w500,// "Medium" weight

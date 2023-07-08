@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class StelScreen extends StatefulWidget {
-  const StelScreen({super.key});
+class QuestionListScreen extends StatefulWidget {
+  const QuestionListScreen({super.key});
 
   @override
-  State<StelScreen> createState() => _StelScreenState();
+  State<QuestionListScreen> createState() => _QuestionScreenState();
 }
 
-class _StelScreenState extends State<StelScreen> {
+class _QuestionScreenState extends State<QuestionListScreen> {
   int _currentIndex = 0;
   List<Color> catColors = [
     Color(0xff68B2DB),
@@ -43,9 +43,9 @@ class _StelScreenState extends State<StelScreen> {
                 ),
               ),
             ),
-             Positioned(
+            Positioned(
               top: 20.0,
-              left:167.0 ,
+              left: 167.0,
               child: SizedBox(
                 width: 81,
                 height: 77,
@@ -53,17 +53,6 @@ class _StelScreenState extends State<StelScreen> {
                   'assets/images/Logo.png',
                   fit: BoxFit.contain,
                 ),
-              ),
-            ),
-           Positioned(
-              top: 100.0,
-              left: 100.0,
-              child: Text(
-                'Set Your Family Activity',
-                style: GoogleFonts.poppins(
-                    fontSize: 18.0,
-                    fontWeight: FontWeight.w500,// "Medium" weight
-                    ),
               ),
             ),
             Positioned(
@@ -86,30 +75,30 @@ class _StelScreenState extends State<StelScreen> {
             ),
             Positioned(
               top: 160.0,
-              left:25.0 ,
+              left: 25.0,
               child: SizedBox(
                 width: 43,
                 height: 40,
                 child: Image.asset(
-                  'assets/images/Group 12560.png',
+                  'assets/images/chat.png',
                   fit: BoxFit.contain,
                 ),
               ),
             ),
-             Positioned(
+            Positioned(
               top: 170.0,
               left: 100.0,
               child: Text(
-                'Alwatzher Series 1',
+                'Question 1',
                 style: GoogleFonts.inter(
-                    fontSize: 16.0,
-                    fontWeight: FontWeight.w500,// "Medium" weight
-                    ),
+                  fontSize: 16.0,
+                  fontWeight: FontWeight.w500, // "Medium" weight
+                ),
               ),
             ),
-             Positioned(
+            Positioned(
               top: 173.0,
-              right:30.0,
+              right: 30.0,
               child: GestureDetector(
                 onTap: () {
                   // Handle button tap
@@ -125,33 +114,32 @@ class _StelScreenState extends State<StelScreen> {
                 ),
               ),
             ),
-             
-             Positioned(
+            Positioned(
               top: 220.0,
-              left:25.0 ,
+              left: 25.0,
               child: SizedBox(
                 width: 43,
                 height: 40,
                 child: Image.asset(
-                  'assets/images/Group 12560.png',
+                  'assets/images/chat.png',
                   fit: BoxFit.contain,
                 ),
               ),
             ),
-             Positioned(
+            Positioned(
               top: 230.0,
               left: 100.0,
               child: Text(
-                'Alwatzher Series 2',
+                'Question 2',
                 style: GoogleFonts.inter(
-                    fontSize: 16.0,
-                    fontWeight: FontWeight.w500,// "Medium" weight
-                    ),
+                  fontSize: 16.0,
+                  fontWeight: FontWeight.w500, // "Medium" weight
+                ),
               ),
             ),
-             Positioned(
+            Positioned(
               top: 233.0,
-              right:30.0,
+              right: 30.0,
               child: GestureDetector(
                 onTap: () {
                   // Handle button tap
@@ -169,30 +157,30 @@ class _StelScreenState extends State<StelScreen> {
             ),
             Positioned(
               top: 280.0,
-              left:25.0 ,
+              left: 25.0,
               child: SizedBox(
                 width: 43,
                 height: 40,
                 child: Image.asset(
-                  'assets/images/Group 12560.png',
+                  'assets/images/chat.png',
                   fit: BoxFit.contain,
                 ),
               ),
             ),
-             Positioned(
+            Positioned(
               top: 290.0,
               left: 100.0,
               child: Text(
-                'Alwatzher Series 3',
+                'Question 3',
                 style: GoogleFonts.inter(
-                    fontSize: 16.0,
-                    fontWeight: FontWeight.w500,// "Medium" weight
-                    ),
+                  fontSize: 16.0,
+                  fontWeight: FontWeight.w500, // "Medium" weight
+                ),
               ),
             ),
-             Positioned(
+            Positioned(
               top: 293.0,
-              right:30.0,
+              right: 30.0,
               child: GestureDetector(
                 onTap: () {
                   // Handle button tap
@@ -210,30 +198,30 @@ class _StelScreenState extends State<StelScreen> {
             ),
             Positioned(
               top: 340.0,
-              left:25.0 ,
+              left: 25.0,
               child: SizedBox(
                 width: 43,
                 height: 40,
                 child: Image.asset(
-                  'assets/images/Group 12560.png',
+                  'assets/images/chat.png',
                   fit: BoxFit.contain,
                 ),
               ),
             ),
-             Positioned(
+            Positioned(
               top: 350.0,
               left: 100.0,
               child: Text(
-                'Alwatzher Series 4',
+                'Question 4',
                 style: GoogleFonts.inter(
-                    fontSize: 16.0,
-                    fontWeight: FontWeight.w500,// "Medium" weight
-                    ),
+                  fontSize: 16.0,
+                  fontWeight: FontWeight.w500, // "Medium" weight
+                ),
               ),
             ),
-             Positioned(
+            Positioned(
               top: 353.0,
-              right:30.0,
+              right: 30.0,
               child: GestureDetector(
                 onTap: () {
                   // Handle button tap
@@ -250,41 +238,18 @@ class _StelScreenState extends State<StelScreen> {
               ),
             ),
             Positioned(
-              top: 400.0,
-              left:25.0 ,
-              child: SizedBox(
-                width: 43,
-                height: 40,
-                child: Image.asset(
-                  'assets/images/Group 12560.png',
-                  fit: BoxFit.contain,
-                ),
-              ),
-            ),
-             Positioned(
-              top: 410.0,
-              left: 100.0,
-              child: Text(
-                'Alwatzher Series 5',
-                style: GoogleFonts.inter(
-                    fontSize: 16.0,
-                    fontWeight: FontWeight.w500,// "Medium" weight
-                    ),
-              ),
-            ),
-             Positioned(
-              top: 413.0,
-              right:30.0,
+              bottom: -40,
+              right: 147.0,
               child: GestureDetector(
                 onTap: () {
                   // Handle button tap
                   // Add your desired functionality here
                 },
                 child: SizedBox(
-                  width: 16.01,
-                  height: 15.0,
+                  width: 100.0,
+                  height: 100.0,
                   child: Image.asset(
-                    'assets/images/Vector.png',
+                    'assets/images/alarm.png',
                     fit: BoxFit.contain,
                   ),
                 ),
