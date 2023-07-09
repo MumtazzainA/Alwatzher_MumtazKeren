@@ -41,18 +41,16 @@ class _Connect3ScreenState extends State<Connect3Screen> {
                   ),
                 ),
               ),
-               Positioned(
-              bottom: 280.0,
-              left:111 ,
-              child: SizedBox(
-                width: 174,
-                height: 248,
-                child: Image.asset(
-                  'assets/images/Group 125.png',
-                  fit: BoxFit.contain,
+              Center(
+                child: SizedBox(
+                  width: 174,
+                  height: 248,
+                  child: Image.asset(
+                    'assets/images/Group 12561.png',
+                    fit: BoxFit.contain,
+                  ),
                 ),
               ),
-            ),
             ],
           ),
         ),

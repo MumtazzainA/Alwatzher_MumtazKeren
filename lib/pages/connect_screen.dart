@@ -159,7 +159,7 @@ class _ConnectScreenState extends State<ConnectScreen> {
               icon: Icon(Icons.person_pin_circle, color: Colors.red),
               label: 'Monitor'),
           BottomNavigationBarItem(icon: Icon(Icons.watch), label: 'Watch'),
-          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
+          // BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
         ],
       ),
     );

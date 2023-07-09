@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:jam/pages/connect3_screen.dart';
 
 class Connect2Screen extends StatefulWidget {
   const Connect2Screen({super.key});
@@ -68,7 +69,12 @@ class _Connect2ScreenState extends State<Connect2Screen> {
                       borderRadius: BorderRadius.circular(10),
                     ),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Connect3Screen()),
+                    );
+                  },
                   child: const Text(
                     "Re-Scan",
                     style: TextStyle(
