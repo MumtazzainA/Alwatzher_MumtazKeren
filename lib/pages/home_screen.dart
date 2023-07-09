@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:jam/pages/connect_screen.dart';
+import 'package:jam/pages/information_screen.dart';
 import 'package:jam/pages/list_of_question_screen.dart';
 import 'package:jam/pages/list_of_reminder_feature_screen.dart';
 import 'package:jam/pages/list_of_watch_address_screen.dart';
@@ -164,14 +165,15 @@ class _HomeScreenState extends State<HomeScreen> {
                                               ReminderListScreen()),
                                     );
                                     break;
-                                  // case 3:
-                                  //   // Ketika item "Information" ditekan
-                                  //   Navigator.push(
-                                  //     context,
-                                  //     MaterialPageRoute(
-                                  //         builder: (context) => ConnectScreen()),
-                                  //   );
-                                  //   break;
+                                  case 3:
+                                    // Ketika item "Information" ditekan
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              InformationScreen()),
+                                    );
+                                    break;
                                   // case 4:
                                   //   // Ketika item "Emergency" ditekan
                                   //   Navigator.push(

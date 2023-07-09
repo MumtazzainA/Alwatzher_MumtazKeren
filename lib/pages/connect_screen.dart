@@ -11,14 +11,6 @@ class ConnectScreen extends StatefulWidget {
 
 class _ConnectScreenState extends State<ConnectScreen> {
   int _currentIndex = 0;
-  List<Color> catColors = [
-    Color(0xff68B2DB),
-    Color(0xff7C6DDB),
-    Color(0xffDD7D7D),
-    Color(0xff79C378),
-    Color(0xff526CC8),
-    Color(0xffF3F574),
-  ];
 
   @override
   Widget build(BuildContext context) {
