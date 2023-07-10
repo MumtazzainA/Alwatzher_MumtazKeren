@@ -6,7 +6,7 @@ import 'package:image_picker/image_picker.dart';
 import '../controller/picture_controller.dart';
 
 class SettingPasswordScreen extends StatefulWidget {
-  const SettingPasswordScreen({super.key});
+  const SettingPasswordScreen({Key? key}) : super(key: key);
 
   @override
   State<SettingPasswordScreen> createState() => _SettingPasswordScreenState();
@@ -21,6 +21,18 @@ class _SettingPasswordScreenState extends State<SettingPasswordScreen> {
 
   int _currentIndex = 1;
 
+  TextEditingController oldPasswordController = TextEditingController();
+  TextEditingController newPasswordController = TextEditingController();
+  TextEditingController confirmPasswordController = TextEditingController();
+
+  @override
+  void dispose() {
+    oldPasswordController.dispose();
+    newPasswordController.dispose();
+    confirmPasswordController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     var isDark = MediaQuery.of(context).platformBrightness == Brightness.dark;
@@ -32,8 +44,9 @@ class _SettingPasswordScreenState extends State<SettingPasswordScreen> {
         ),
         actions: [
           IconButton(
-              onPressed: () {},
-              icon: Icon(isDark ? Icons.light_mode : Icons.dark_mode)),
+            onPressed: () {},
+            icon: Icon(isDark ? Icons.light_mode : Icons.dark_mode),
+          ),
         ],
       ),
       body: SingleChildScrollView(
@@ -50,9 +63,7 @@ class _SettingPasswordScreenState extends State<SettingPasswordScreen> {
                       borderRadius: BorderRadius.circular(100),
                       child: Obx(
                         () => CircleAvatar(
-                          backgroundImage: pictureController
-                                      .isProficPicPathSet.value ==
-                                  true
+                          backgroundImage: pictureController.isProficPicPathSet.value == true
                               ? FileImage(
                                   File(pictureController.profilePicPath.value),
                                 ) as ImageProvider
@@ -81,8 +92,9 @@ class _SettingPasswordScreenState extends State<SettingPasswordScreen> {
                       onTap: () {
                         print("Camera clicked");
                         showModalBottomSheet(
-                            context: context,
-                            builder: (context) => bottomSheet(context));
+                          context: context,
+                          builder: (context) => bottomSheet(context),
+                        );
                       },
                     ),
                   ),
@@ -94,7 +106,6 @@ class _SettingPasswordScreenState extends State<SettingPasswordScreen> {
               ),
               const Divider(),
               Container(
-                // padding: EdgeInsets.fromLTRB(1, 2, 1, 0),
                 width: double.infinity,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -115,20 +126,33 @@ class _SettingPasswordScreenState extends State<SettingPasswordScreen> {
                     ),
                     Container(
                       margin: EdgeInsets.fromLTRB(0, 0, 0, 16),
-                      padding: EdgeInsets.fromLTRB(12, 10, 12, 12),
+                      padding: EdgeInsets.fromLTRB(12, 0, 12, 0),
                       width: double.infinity,
                       decoration: BoxDecoration(
                         border: Border.all(color: Color(0xffa8a8a8)),
                         borderRadius: BorderRadius.circular(8),
                       ),
-                      child: Text(
-                        '',
+                      child: TextFormField(
+                        controller: oldPasswordController,
                         style: GoogleFonts.poppins(
                           textStyle: TextStyle(
                             fontSize: 12,
                             fontWeight: FontWeight.w400,
                             height: 1.5,
                             color: Color(0xff000000),
+                          ),
+                        ),
+                        obscureText: true,
+                        decoration: InputDecoration(
+                          border: InputBorder.none,
+                          hintText: 'Enter old password',
+                          hintStyle: GoogleFonts.poppins(
+                            textStyle: TextStyle(
+                              fontSize: 12,
+                              fontWeight: FontWeight.w400,
+                              height: 1.5,
+                              color: Color(0xffa8a8a8),
+                            ),
                           ),
                         ),
                       ),
@@ -149,20 +173,33 @@ class _SettingPasswordScreenState extends State<SettingPasswordScreen> {
                     ),
                     Container(
                       margin: EdgeInsets.fromLTRB(0, 0, 0, 19),
-                      padding: EdgeInsets.fromLTRB(12, 11, 12, 11),
+                      padding: EdgeInsets.fromLTRB(12, 0, 12, 0),
                       width: double.infinity,
                       decoration: BoxDecoration(
                         border: Border.all(color: Color(0xffa8a8a8)),
                         borderRadius: BorderRadius.circular(8),
                       ),
-                      child: Text(
-                        '',
+                      child: TextFormField(
+                        controller: newPasswordController,
                         style: GoogleFonts.poppins(
                           textStyle: TextStyle(
                             fontSize: 12,
                             fontWeight: FontWeight.w400,
                             height: 1.5,
                             color: Color(0xff000000),
+                          ),
+                        ),
+                        obscureText: true,
+                        decoration: InputDecoration(
+                          border: InputBorder.none,
+                          hintText: 'Enter new password',
+                          hintStyle: GoogleFonts.poppins(
+                            textStyle: TextStyle(
+                              fontSize: 12,
+                              fontWeight: FontWeight.w400,
+                              height: 1.5,
+                              color: Color(0xffa8a8a8),
+                            ),
                           ),
                         ),
                       ),
@@ -183,20 +220,33 @@ class _SettingPasswordScreenState extends State<SettingPasswordScreen> {
                     ),
                     Container(
                       margin: EdgeInsets.fromLTRB(0, 0, 0, 65),
-                      padding: EdgeInsets.fromLTRB(12, 11, 12, 11),
+                      padding: EdgeInsets.fromLTRB(12, 0, 12, 0),
                       width: double.infinity,
                       decoration: BoxDecoration(
                         border: Border.all(color: Color(0xffa8a8a8)),
                         borderRadius: BorderRadius.circular(8),
                       ),
-                      child: Text(
-                        '',
+                      child: TextFormField(
+                        controller: confirmPasswordController,
                         style: GoogleFonts.poppins(
                           textStyle: TextStyle(
                             fontSize: 12,
                             fontWeight: FontWeight.w400,
                             height: 1.5,
                             color: Color(0xff000000),
+                          ),
+                        ),
+                        obscureText: true,
+                        decoration: InputDecoration(
+                          border: InputBorder.none,
+                          hintText: 'Confirm new password',
+                          hintStyle: GoogleFonts.poppins(
+                            textStyle: TextStyle(
+                              fontSize: 12,
+                              fontWeight: FontWeight.w400,
+                              height: 1.5,
+                              color: Color(0xffa8a8a8),
+                            ),
                           ),
                         ),
                       ),
@@ -270,8 +320,9 @@ class _SettingPasswordScreenState extends State<SettingPasswordScreen> {
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
           BottomNavigationBarItem(icon: Icon(Icons.settings), label: 'Setting'),
           BottomNavigationBarItem(
-              icon: Icon(Icons.person_pin_circle, color: Colors.red),
-              label: 'Monitor'),
+            icon: Icon(Icons.person_pin_circle, color: Colors.red),
+            label: 'Monitor',
+          ),
           BottomNavigationBarItem(icon: Icon(Icons.watch), label: 'Watch'),
           BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
         ],
@@ -310,8 +361,7 @@ class _SettingPasswordScreenState extends State<SettingPasswordScreen> {
                     ),
                     Text(
                       "Gallery",
-                      style:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                      style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                     )
                   ],
                 ),
@@ -332,8 +382,7 @@ class _SettingPasswordScreenState extends State<SettingPasswordScreen> {
                     ),
                     Text(
                       "Camera",
-                      style:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                      style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                     )
                   ],
                 ),
@@ -349,8 +398,7 @@ class _SettingPasswordScreenState extends State<SettingPasswordScreen> {
   }
 
   Future<void> takePhoto(ImageSource source) async {
-    final pickedImage =
-        await imagePicker.pickImage(source: source, imageQuality: 100);
+    final pickedImage = await imagePicker.pickImage(source: source, imageQuality: 100);
 
     pickedFile = File(pickedImage!.path);
     pictureController.setProfileImagePatch(pickedFile!.path);
