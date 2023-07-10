@@ -6,6 +6,8 @@ import 'package:image_picker/image_picker.dart';
 import 'package:jam/controller/picture_controller.dart';
 import 'package:jam/pages/add_question.dart';
 import 'package:jam/pages/list_of_ask_feature_screen.dart';
+import 'package:jam/pages/login_screen.dart';
+import 'package:jam/pages/setting_password_screen.dart';
 import 'package:jam/pages/setting_profile_screen.dart';
 import 'package:jam/pages/watch_setting_sreen.dart';
 
@@ -140,7 +142,6 @@ class _SettingScreenState extends State<SettingScreen> {
                         context,
                         MaterialPageRoute(
                             builder: (context) => SettingProfileScreen()),
-                            
                       );
                     },
                     trailing: Container(
@@ -185,7 +186,11 @@ class _SettingScreenState extends State<SettingScreen> {
                     leading: Container(child: Icon(Icons.lock)),
                     title: Text('Change Password'),
                     onTap: () {
-                      //  change password
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => SettingPasswordScreen()),
+                      );
                     },
                     trailing: Container(
                       child: const Icon(Icons.arrow_forward_ios),
@@ -195,7 +200,10 @@ class _SettingScreenState extends State<SettingScreen> {
                     leading: Container(child: Icon(Icons.logout)),
                     title: Text('Logout'),
                     onTap: () {
-                      //  logout
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => LoginScreen()),
+                      );
                     },
                     trailing: Container(
                       child: const Icon(Icons.arrow_forward_ios),
