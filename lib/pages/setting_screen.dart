@@ -42,7 +42,7 @@ class _SettingScreenState extends State<SettingScreen> {
       appBar: AppBar(
         backgroundColor: Color(0xff4C88EC),
         title: Text(
-          'Settting',
+          'Setting',
         ),
         actions: [
           IconButton(
