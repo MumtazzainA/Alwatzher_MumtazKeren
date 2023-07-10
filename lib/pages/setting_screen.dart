@@ -176,7 +176,11 @@ class _SettingScreenState extends State<SettingScreen> {
                     ),
                     title: Text('Help & Support'),
                     onTap: () {
-                      //  help & supp
+                      // Navigator.push(
+                      //   context,
+                      //   MaterialPageRoute(
+                      //       builder: (context) => HelpSupportScreen()),
+                      // );
                     },
                     trailing: Container(
                       child: const Icon(Icons.arrow_forward_ios),
