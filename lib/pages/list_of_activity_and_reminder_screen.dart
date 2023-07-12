@@ -134,7 +134,7 @@ class _ListActivityFeatureScreenState extends State<ListActivityFeatureScreen> {
                                             color: Colors.yellow,
                                             size: 40,
                                           ),
-                                          
+                                          Column(children: [],)
                                         ],
                                       ),
                                     ),
