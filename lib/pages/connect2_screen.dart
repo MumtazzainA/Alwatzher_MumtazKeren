@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:jam/pages/connect3_screen.dart';
+import 'package:jam/pages/help_screen.dart';
 
 class Connect2Screen extends StatefulWidget {
   const Connect2Screen({super.key});
@@ -85,23 +86,26 @@ class _Connect2ScreenState extends State<Connect2Screen> {
               ),
             ),
             Positioned(
-              bottom: 80.0, // Adjust the top positioning as needed
-              left: 137.0, // Adjust the left positioning as needed
-              right: 50.0, // Adjust the right positioning as needed
+              bottom: 80.0,
+              left: 137.0,
+              right: 50.0,
               child: GestureDetector(
                 onTap: () {
-                  // Handle link tap
-                  // Add your desired functionality here, such as navigating to a specific page or performing an action
+                  // Navigasi ke halaman tujuan
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => HelpScreen()),
+                  );
+
+                  // Atau tambahkan tindakan yang diinginkan di sini
                 },
                 child: const Text(
                   'No device found?',
                   style: TextStyle(
-                    color: Color(
-                        0xff305CCF), // Set the text color to blue for the link
+                    color: Color(0xff305CCF),
                     fontSize: 16.0,
                     fontWeight: FontWeight.w500,
-                    decoration: TextDecoration
-                        .underline, // Add underline decoration to indicate it's a link
+                    decoration: TextDecoration.underline,
                   ),
                 ),
               ),

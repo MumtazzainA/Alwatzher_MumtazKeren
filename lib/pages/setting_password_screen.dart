@@ -5,31 +5,31 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:image_picker/image_picker.dart';
 import '../controller/picture_controller.dart';
 
-class EditQuestionScreen extends StatefulWidget {
-  const EditQuestionScreen({Key? key}) : super(key: key);
+class SettingPasswordScreen extends StatefulWidget {
+  const SettingPasswordScreen({Key? key}) : super(key: key);
 
   @override
-  State<EditQuestionScreen> createState() => _EditQuestionScreenState();
+  State<SettingPasswordScreen> createState() => _SettingPasswordScreenState();
 }
 
-class _EditQuestionScreenState extends State<EditQuestionScreen> {
+class _SettingPasswordScreenState extends State<SettingPasswordScreen> {
   File? pickedFile;
 
   ImagePicker imagePicker = ImagePicker();
 
   PictureController pictureController = Get.put(PictureController());
 
-  int _currentIndex = 3;
+  int _currentIndex = 1;
 
-  TextEditingController titleController = TextEditingController();
-  TextEditingController questionController = TextEditingController();
-  TextEditingController answerController = TextEditingController();
+  TextEditingController oldPasswordController = TextEditingController();
+  TextEditingController newPasswordController = TextEditingController();
+  TextEditingController confirmPasswordController = TextEditingController();
 
   @override
   void dispose() {
-    titleController.dispose();
-    questionController.dispose();
-    answerController.dispose();
+    oldPasswordController.dispose();
+    newPasswordController.dispose();
+    confirmPasswordController.dispose();
     super.dispose();
   }
 
@@ -40,7 +40,7 @@ class _EditQuestionScreenState extends State<EditQuestionScreen> {
       appBar: AppBar(
         backgroundColor: Color(0xff4C88EC),
         title: Text(
-          'Question',
+          'Profile',
         ),
         actions: [
           IconButton(
@@ -100,20 +100,12 @@ class _EditQuestionScreenState extends State<EditQuestionScreen> {
                   ),
                 ],
               ),
-              const SizedBox(height: 10),
-              Text(
-                "Mr. Abudabu",
-                style: GoogleFonts.poppins(
-                  textStyle: TextStyle(fontWeight: FontWeight.normal),
-                ),
-              ),
               const SizedBox(height: 15),
               const SizedBox(
-                height: 50,
+                height: 20,
               ),
               const Divider(),
               Container(
-                // padding: EdgeInsets.fromLTRB(1, 2, 1, 0),
                 width: double.infinity,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -121,53 +113,7 @@ class _EditQuestionScreenState extends State<EditQuestionScreen> {
                     Container(
                       margin: EdgeInsets.fromLTRB(0, 0, 0, 2),
                       child: Text(
-                        'Title Of Question',
-                        style: GoogleFonts.poppins(
-                          textStyle: TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.w500,
-                            height: 1.5,
-                            color: Color(0xff000000),
-                          ),
-                        ),
-                      ),
-                    ),
-                    Container(
-                      margin: EdgeInsets.fromLTRB(0, 0, 0, 19),
-                      padding: EdgeInsets.fromLTRB(12, 0, 12, 0),
-                      width: double.infinity,
-                      decoration: BoxDecoration(
-                        border: Border.all(color: Color(0xffa8a8a8)),
-                        borderRadius: BorderRadius.circular(8),
-                      ),
-                      child: TextFormField(
-                        controller: titleController,
-                        style: GoogleFonts.poppins(
-                          textStyle: TextStyle(
-                            fontSize: 12,
-                            fontWeight: FontWeight.w400,
-                            height: 1.5,
-                            color: Color(0xff000000),
-                          ),
-                        ),
-                        decoration: InputDecoration(
-                          border: InputBorder.none,
-                          hintText: 'Enter title',
-                          hintStyle: GoogleFonts.poppins(
-                            textStyle: TextStyle(
-                              fontSize: 12,
-                              fontWeight: FontWeight.w400,
-                              height: 1.5,
-                              color: Color(0xffa8a8a8),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                    Container(
-                      margin: EdgeInsets.fromLTRB(0, 0, 0, 2),
-                      child: Text(
-                        'Question',
+                        'Old Password',
                         style: GoogleFonts.poppins(
                           textStyle: TextStyle(
                             fontSize: 14,
@@ -187,7 +133,7 @@ class _EditQuestionScreenState extends State<EditQuestionScreen> {
                         borderRadius: BorderRadius.circular(8),
                       ),
                       child: TextFormField(
-                        controller: questionController,
+                        controller: oldPasswordController,
                         style: GoogleFonts.poppins(
                           textStyle: TextStyle(
                             fontSize: 12,
@@ -196,9 +142,10 @@ class _EditQuestionScreenState extends State<EditQuestionScreen> {
                             color: Color(0xff000000),
                           ),
                         ),
+                        obscureText: true,
                         decoration: InputDecoration(
                           border: InputBorder.none,
-                          hintText: 'Enter question',
+                          hintText: 'Enter old password',
                           hintStyle: GoogleFonts.poppins(
                             textStyle: TextStyle(
                               fontSize: 12,
@@ -213,7 +160,7 @@ class _EditQuestionScreenState extends State<EditQuestionScreen> {
                     Container(
                       margin: EdgeInsets.fromLTRB(0, 0, 0, 5),
                       child: Text(
-                        'Answer',
+                        'New Password',
                         style: GoogleFonts.poppins(
                           textStyle: TextStyle(
                             fontSize: 14,
@@ -233,7 +180,7 @@ class _EditQuestionScreenState extends State<EditQuestionScreen> {
                         borderRadius: BorderRadius.circular(8),
                       ),
                       child: TextFormField(
-                        controller: answerController,
+                        controller: newPasswordController,
                         style: GoogleFonts.poppins(
                           textStyle: TextStyle(
                             fontSize: 12,
@@ -242,9 +189,10 @@ class _EditQuestionScreenState extends State<EditQuestionScreen> {
                             color: Color(0xff000000),
                           ),
                         ),
+                        obscureText: true,
                         decoration: InputDecoration(
                           border: InputBorder.none,
-                          hintText: 'Enter answer',
+                          hintText: 'Enter new password',
                           hintStyle: GoogleFonts.poppins(
                             textStyle: TextStyle(
                               fontSize: 12,
@@ -256,7 +204,53 @@ class _EditQuestionScreenState extends State<EditQuestionScreen> {
                         ),
                       ),
                     ),
-                    const SizedBox(height: 20),
+                    Container(
+                      margin: EdgeInsets.fromLTRB(0, 0, 0, 2),
+                      child: Text(
+                        'Confirm Password',
+                        style: GoogleFonts.poppins(
+                          textStyle: TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.w500,
+                            height: 1.5,
+                            color: Color(0xff000000),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Container(
+                      margin: EdgeInsets.fromLTRB(0, 0, 0, 65),
+                      padding: EdgeInsets.fromLTRB(12, 0, 12, 0),
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                        border: Border.all(color: Color(0xffa8a8a8)),
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                      child: TextFormField(
+                        controller: confirmPasswordController,
+                        style: GoogleFonts.poppins(
+                          textStyle: TextStyle(
+                            fontSize: 12,
+                            fontWeight: FontWeight.w400,
+                            height: 1.5,
+                            color: Color(0xff000000),
+                          ),
+                        ),
+                        obscureText: true,
+                        decoration: InputDecoration(
+                          border: InputBorder.none,
+                          hintText: 'Confirm new password',
+                          hintStyle: GoogleFonts.poppins(
+                            textStyle: TextStyle(
+                              fontSize: 12,
+                              fontWeight: FontWeight.w400,
+                              height: 1.5,
+                              color: Color(0xffa8a8a8),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
                     Container(
                       margin: EdgeInsets.fromLTRB(38, 0, 37, 125),
                       width: double.infinity,
@@ -267,7 +261,7 @@ class _EditQuestionScreenState extends State<EditQuestionScreen> {
                       ),
                       child: Center(
                         child: Text(
-                          'Update',
+                          'Change Password',
                           style: GoogleFonts.poppins(
                             textStyle: TextStyle(
                               fontSize: 15,
@@ -330,7 +324,7 @@ class _EditQuestionScreenState extends State<EditQuestionScreen> {
             label: 'Monitor',
           ),
           BottomNavigationBarItem(icon: Icon(Icons.watch), label: 'Watch'),
-          // BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
         ],
       ),
     );

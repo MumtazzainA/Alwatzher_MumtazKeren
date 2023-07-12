@@ -6,7 +6,7 @@ import 'package:image_picker/image_picker.dart';
 import '../controller/picture_controller.dart';
 
 class SettingProfileScreen extends StatefulWidget {
-  const SettingProfileScreen({super.key});
+  const SettingProfileScreen({Key? key}) : super(key: key);
 
   @override
   State<SettingProfileScreen> createState() => _SettingProfileScreenState();
@@ -21,6 +21,20 @@ class _SettingProfileScreenState extends State<SettingProfileScreen> {
 
   int _currentIndex = 1;
 
+  TextEditingController usernameController = TextEditingController();
+  TextEditingController emailController = TextEditingController();
+  TextEditingController phoneNumberController = TextEditingController();
+  TextEditingController addressController = TextEditingController();
+
+  @override
+  void dispose() {
+    usernameController.dispose();
+    emailController.dispose();
+    phoneNumberController.dispose();
+    addressController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     var isDark = MediaQuery.of(context).platformBrightness == Brightness.dark;
@@ -32,8 +46,9 @@ class _SettingProfileScreenState extends State<SettingProfileScreen> {
         ),
         actions: [
           IconButton(
-              onPressed: () {},
-              icon: Icon(isDark ? Icons.light_mode : Icons.dark_mode)),
+            onPressed: () {},
+            icon: Icon(isDark ? Icons.light_mode : Icons.dark_mode),
+          ),
         ],
       ),
       body: SingleChildScrollView(
@@ -81,8 +96,9 @@ class _SettingProfileScreenState extends State<SettingProfileScreen> {
                       onTap: () {
                         print("Camera clicked");
                         showModalBottomSheet(
-                            context: context,
-                            builder: (context) => bottomSheet(context));
+                          context: context,
+                          builder: (context) => bottomSheet(context),
+                        );
                       },
                     ),
                   ),
@@ -94,7 +110,6 @@ class _SettingProfileScreenState extends State<SettingProfileScreen> {
               ),
               const Divider(),
               Container(
-                // padding: EdgeInsets.fromLTRB(1, 2, 1, 0),
                 width: double.infinity,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -115,20 +130,32 @@ class _SettingProfileScreenState extends State<SettingProfileScreen> {
                     ),
                     Container(
                       margin: EdgeInsets.fromLTRB(0, 0, 0, 19),
-                      padding: EdgeInsets.fromLTRB(12, 11, 12, 11),
+                      padding: EdgeInsets.fromLTRB(12, 0, 12, 0),
                       width: double.infinity,
                       decoration: BoxDecoration(
                         border: Border.all(color: Color(0xffa8a8a8)),
                         borderRadius: BorderRadius.circular(8),
                       ),
-                      child: Text(
-                        'Username',
+                      child: TextFormField(
+                        controller: usernameController,
                         style: GoogleFonts.poppins(
                           textStyle: TextStyle(
                             fontSize: 12,
                             fontWeight: FontWeight.w400,
                             height: 1.5,
                             color: Color(0xff000000),
+                          ),
+                        ),
+                        decoration: InputDecoration(
+                          border: InputBorder.none,
+                          hintText: 'Enter username',
+                          hintStyle: GoogleFonts.poppins(
+                            textStyle: TextStyle(
+                              fontSize: 12,
+                              fontWeight: FontWeight.w400,
+                              height: 1.5,
+                              color: Color(0xffa8a8a8),
+                            ),
                           ),
                         ),
                       ),
@@ -149,20 +176,32 @@ class _SettingProfileScreenState extends State<SettingProfileScreen> {
                     ),
                     Container(
                       margin: EdgeInsets.fromLTRB(0, 0, 0, 16),
-                      padding: EdgeInsets.fromLTRB(12, 10, 12, 12),
+                      padding: EdgeInsets.fromLTRB(12, 0, 12, 0),
                       width: double.infinity,
                       decoration: BoxDecoration(
                         border: Border.all(color: Color(0xffa8a8a8)),
                         borderRadius: BorderRadius.circular(8),
                       ),
-                      child: Text(
-                        '12345@gmail.com',
+                      child: TextFormField(
+                        controller: emailController,
                         style: GoogleFonts.poppins(
                           textStyle: TextStyle(
                             fontSize: 12,
                             fontWeight: FontWeight.w400,
                             height: 1.5,
                             color: Color(0xff000000),
+                          ),
+                        ),
+                        decoration: InputDecoration(
+                          border: InputBorder.none,
+                          hintText: 'Enter email',
+                          hintStyle: GoogleFonts.poppins(
+                            textStyle: TextStyle(
+                              fontSize: 12,
+                              fontWeight: FontWeight.w400,
+                              height: 1.5,
+                              color: Color(0xffa8a8a8),
+                            ),
                           ),
                         ),
                       ),
@@ -174,7 +213,7 @@ class _SettingProfileScreenState extends State<SettingProfileScreen> {
                         style: GoogleFonts.poppins(
                           textStyle: TextStyle(
                             fontSize: 14,
-                            fontWeight: FontWeight.w500,
+                            fontWeight: FontWeight.w400,
                             height: 1.5,
                             color: Color(0xff000000),
                           ),
@@ -183,20 +222,32 @@ class _SettingProfileScreenState extends State<SettingProfileScreen> {
                     ),
                     Container(
                       margin: EdgeInsets.fromLTRB(0, 0, 0, 19),
-                      padding: EdgeInsets.fromLTRB(12, 11, 12, 11),
+                      padding: EdgeInsets.fromLTRB(12, 0, 12, 0),
                       width: double.infinity,
                       decoration: BoxDecoration(
                         border: Border.all(color: Color(0xffa8a8a8)),
                         borderRadius: BorderRadius.circular(8),
                       ),
-                      child: Text(
-                        '+08089209280',
+                      child: TextFormField(
+                        controller: phoneNumberController,
                         style: GoogleFonts.poppins(
                           textStyle: TextStyle(
                             fontSize: 12,
                             fontWeight: FontWeight.w400,
                             height: 1.5,
                             color: Color(0xff000000),
+                          ),
+                        ),
+                        decoration: InputDecoration(
+                          border: InputBorder.none,
+                          hintText: 'Enter phone number',
+                          hintStyle: GoogleFonts.poppins(
+                            textStyle: TextStyle(
+                              fontSize: 12,
+                              fontWeight: FontWeight.w400,
+                              height: 1.5,
+                              color: Color(0xffa8a8a8),
+                            ),
                           ),
                         ),
                       ),
@@ -217,20 +268,32 @@ class _SettingProfileScreenState extends State<SettingProfileScreen> {
                     ),
                     Container(
                       margin: EdgeInsets.fromLTRB(0, 0, 0, 65),
-                      padding: EdgeInsets.fromLTRB(12, 11, 12, 11),
+                      padding: EdgeInsets.fromLTRB(12, 0, 12, 0),
                       width: double.infinity,
                       decoration: BoxDecoration(
                         border: Border.all(color: Color(0xffa8a8a8)),
                         borderRadius: BorderRadius.circular(8),
                       ),
-                      child: Text(
-                        'Address',
+                      child: TextFormField(
+                        controller: addressController,
                         style: GoogleFonts.poppins(
                           textStyle: TextStyle(
                             fontSize: 12,
                             fontWeight: FontWeight.w400,
                             height: 1.5,
                             color: Color(0xff000000),
+                          ),
+                        ),
+                        decoration: InputDecoration(
+                          border: InputBorder.none,
+                          hintText: 'Enter address',
+                          hintStyle: GoogleFonts.poppins(
+                            textStyle: TextStyle(
+                              fontSize: 12,
+                              fontWeight: FontWeight.w400,
+                              height: 1.5,
+                              color: Color(0xffa8a8a8),
+                            ),
                           ),
                         ),
                       ),
@@ -304,8 +367,9 @@ class _SettingProfileScreenState extends State<SettingProfileScreen> {
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
           BottomNavigationBarItem(icon: Icon(Icons.settings), label: 'Setting'),
           BottomNavigationBarItem(
-              icon: Icon(Icons.person_pin_circle, color: Colors.red),
-              label: 'Monitor'),
+            icon: Icon(Icons.person_pin_circle, color: Colors.red),
+            label: 'Monitor',
+          ),
           BottomNavigationBarItem(icon: Icon(Icons.watch), label: 'Watch'),
           BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
         ],
