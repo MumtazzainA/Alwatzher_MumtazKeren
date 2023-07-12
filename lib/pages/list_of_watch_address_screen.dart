@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:jam/pages/setting_watch_profile_screen.dart';
 
 class AddressListFeature extends StatefulWidget {
   const AddressListFeature({super.key});
@@ -69,11 +70,12 @@ class _ListScreenState extends State<AddressListFeature> {
                                 fontSize: 16, fontWeight: FontWeight.w500)),
                       ),
                       onTap: () {
-                        // Navigator.push(
-                        //   context,
-                        //   MaterialPageRoute(
-                        //       builder: (context) => ()),
-                        // );
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  SettingWatchProfileScreen()),
+                        );
                       },
                       trailing: Container(
                         child: const Icon(Icons.arrow_forward_ios),
@@ -90,11 +92,12 @@ class _ListScreenState extends State<AddressListFeature> {
                                 fontSize: 16, fontWeight: FontWeight.w500)),
                       ),
                       onTap: () {
-                        // Navigator.push(
-                        //   context,
-                        //   MaterialPageRoute(
-                        //       builder: (context) => EditQuestionScreen()),
-                        // );
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  SettingWatchProfileScreen()),
+                        );
                       },
                       trailing: Container(
                         child: const Icon(Icons.arrow_forward_ios),
