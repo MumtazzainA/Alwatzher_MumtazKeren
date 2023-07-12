@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:jam/pages/list_of_activity_and_reminder_screen.dart';
 
 class ReminderListScreen extends StatefulWidget {
   const ReminderListScreen({super.key});
@@ -68,11 +69,11 @@ class _QuestionScreenState extends State<ReminderListScreen> {
                                 fontSize: 16, fontWeight: FontWeight.w500)),
                       ),
                       onTap: () {
-                        // Navigator.push(
-                        //   context,
-                        //   MaterialPageRoute(
-                        //       builder: (context) => ()),
-                        // );
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => ListActivityFeatureScreen()),
+                        );
                       },
                       trailing: Container(
                         child: const Icon(Icons.arrow_forward_ios),
@@ -89,11 +90,11 @@ class _QuestionScreenState extends State<ReminderListScreen> {
                                 fontSize: 16, fontWeight: FontWeight.w500)),
                       ),
                       onTap: () {
-                        // Navigator.push(
-                        //   context,
-                        //   MaterialPageRoute(
-                        //       builder: (context) => EditQuestionScreen()),
-                        // );
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => ListActivityFeatureScreen()),
+                        );
                       },
                       trailing: Container(
                         child: const Icon(Icons.arrow_forward_ios),
