@@ -44,11 +44,6 @@ class _SettingScreenState extends State<SettingScreen> {
         title: Text(
           'Setting',
         ),
-        actions: [
-          IconButton(
-              onPressed: () {},
-              icon: Icon(isDark ? Icons.light_mode : Icons.dark_mode)),
-        ],
       ),
       body: SingleChildScrollView(
         child: Container(
@@ -156,18 +151,6 @@ class _SettingScreenState extends State<SettingScreen> {
                         fontSize: 15,
                         fontWeight: FontWeight.w600,
                       ),
-                    ),
-                  ),
-                  ListTile(
-                    leading: Container(
-                      child: Icon(Icons.dark_mode),
-                    ),
-                    title: Text('Darkmode'),
-                    onTap: () {
-                      //  profile settings
-                    },
-                    trailing: Container(
-                      child: const Icon(Icons.arrow_forward_ios),
                     ),
                   ),
                   ListTile(
