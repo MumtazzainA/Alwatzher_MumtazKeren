@@ -22,6 +22,11 @@ class _SettingProfileScreenState extends State<SettingWatchProfileScreen> {
 
   int _currentIndex = 1;
 
+  TextEditingController usernameController = TextEditingController();
+  TextEditingController patientNameController = TextEditingController();
+  TextEditingController emergencyPhoneNumberController = TextEditingController();
+  TextEditingController addressController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     var isDark = MediaQuery.of(context).platformBrightness == Brightness.dark;
@@ -129,15 +134,22 @@ class _SettingProfileScreenState extends State<SettingWatchProfileScreen> {
                         border: Border.all(color: Color(0xffa8a8a8)),
                         borderRadius: BorderRadius.circular(8),
                       ),
-                      child: Text(
-                        'Username',
-                        style: GoogleFonts.poppins(
-                          textStyle: TextStyle(
+                      child: TextFormField(
+                        controller: usernameController,
+                        decoration: InputDecoration.collapsed(
+                          hintText: 'Username',
+                          hintStyle: TextStyle(
                             fontSize: 12,
                             fontWeight: FontWeight.w400,
                             height: 1.5,
                             color: Color(0xff000000),
                           ),
+                        ),
+                        style: TextStyle(
+                          fontSize: 12,
+                          fontWeight: FontWeight.w400,
+                          height: 1.5,
+                          color: Color(0xff000000),
                         ),
                       ),
                     ),
@@ -163,15 +175,22 @@ class _SettingProfileScreenState extends State<SettingWatchProfileScreen> {
                         border: Border.all(color: Color(0xffa8a8a8)),
                         borderRadius: BorderRadius.circular(8),
                       ),
-                      child: Text(
-                        'Name',
-                        style: GoogleFonts.poppins(
-                          textStyle: TextStyle(
+                      child: TextFormField(
+                        controller: patientNameController,
+                        decoration: InputDecoration.collapsed(
+                          hintText: 'Name',
+                          hintStyle: TextStyle(
                             fontSize: 12,
                             fontWeight: FontWeight.w400,
                             height: 1.5,
                             color: Color(0xff000000),
                           ),
+                        ),
+                        style: TextStyle(
+                          fontSize: 12,
+                          fontWeight: FontWeight.w400,
+                          height: 1.5,
+                          color: Color(0xff000000),
                         ),
                       ),
                     ),
@@ -197,15 +216,22 @@ class _SettingProfileScreenState extends State<SettingWatchProfileScreen> {
                         border: Border.all(color: Color(0xffa8a8a8)),
                         borderRadius: BorderRadius.circular(8),
                       ),
-                      child: Text(
-                        '+08089209280',
-                        style: GoogleFonts.poppins(
-                          textStyle: TextStyle(
+                      child: TextFormField(
+                        controller: emergencyPhoneNumberController,
+                        decoration: InputDecoration.collapsed(
+                          hintText: 'Phone Number',
+                          hintStyle: TextStyle(
                             fontSize: 12,
                             fontWeight: FontWeight.w400,
                             height: 1.5,
                             color: Color(0xff000000),
                           ),
+                        ),
+                        style: TextStyle(
+                          fontSize: 12,
+                          fontWeight: FontWeight.w400,
+                          height: 1.5,
+                          color: Color(0xff000000),
                         ),
                       ),
                     ),
@@ -231,15 +257,22 @@ class _SettingProfileScreenState extends State<SettingWatchProfileScreen> {
                         border: Border.all(color: Color(0xffa8a8a8)),
                         borderRadius: BorderRadius.circular(8),
                       ),
-                      child: Text(
-                        'Address',
-                        style: GoogleFonts.poppins(
-                          textStyle: TextStyle(
+                      child: TextFormField(
+                        controller: addressController,
+                        decoration: InputDecoration.collapsed(
+                          hintText: 'Address',
+                          hintStyle: TextStyle(
                             fontSize: 12,
                             fontWeight: FontWeight.w400,
                             height: 1.5,
                             color: Color(0xff000000),
                           ),
+                        ),
+                        style: TextStyle(
+                          fontSize: 12,
+                          fontWeight: FontWeight.w400,
+                          height: 1.5,
+                          color: Color(0xff000000),
                         ),
                       ),
                     ),
