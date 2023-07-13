@@ -28,13 +28,12 @@ class Article extends Equatable {
   static List<Article> articles = [
     Article(
       id: '1',
-      title:
-          'Lorem ipsum dolor sit amet, consectetur elit. Cras molestie maximus',
+      title: 'Kurang Tidur Sebabkan Demensia, Kok Bisa?',
       subtitle:
           'Aliquam laoreet ante non diam suscipit accumsan. Sed vel consequat leo, non suscipit odio. Aliquam turpis',
       body:
-          'Nullam sed augue a turpis bibendum cursus. Suspendisse potenti. Praesent mi ligula, mollis quis elit ac, eleifend vestibulum ex. Nullam quis sodales tellus. Integer feugiat dolor et nisi semper luctus. Nulla egestas nec augue facilisis pharetra. Sed ultricies nibh a odio aliquam, eu imperdiet purus aliquam. Donec id ante nec',
-      author: 'Anna G. Wright',
+          'Menurut penelitian yang terbit pada jurnal Nature Communication di tahun 2021, kurang tidur bisa menyebabkan demensia. Hasil penelitian ini menunjukkan bahwa 521 partisipan dari 8,000 partisipan yang berusia rata-rata 77 tahun didiagnosis dengan demensia. Penelitian ini dilakukan selama 31 tahun, mulai dari tahun 1985 hingga 2016, dan melibatkan banyak aspek, termasuk berapa lama waktu tidur di malam hari. Partisipan yang didiagnosis dengan demensia rata-rata tidur selama kurang dari 6 jam setiap malam. Namun, penelitian lebih lanjut diperlukan untuk mengetahui kaitan antara kurang tidur dan demensia. Sedangkan menurut Sleep Foundation, beberapa penelitian menunjukkan bahwa kurang tidur bisa meningkatkan kadar plak beta-amiloid di dalam otak. Penumpukan plak ini akan merusak sel-sel otak dan bisa jadi penyebab Alzheimer, yang merupakan salah satu jenis demensia yang paling sering ditemui.',
+      author: 'Ria Apriani',
       authorImageUrl:
           'https://images.unsplash.com/photo-1658786403875-ef4086b78196?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1287&q=80',
       category: 'Politics',
