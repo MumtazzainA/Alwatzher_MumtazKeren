@@ -250,7 +250,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 break;
               case 2:
                 // Ketika item "Monitor" ditekan
-                Navigator.pushNamed(context, '/monitor');
+                //Navigator.pushNamed(context, '/monitor');
                 break;
               case 3:
                 // Ketika item "Watch" ditekan

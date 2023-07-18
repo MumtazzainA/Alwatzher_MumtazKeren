@@ -6,13 +6,13 @@ import 'package:image_picker/image_picker.dart';
 import '../controller/picture_controller.dart';
 
 class AddQuestionScreen extends StatefulWidget {
-  const AddQuestionScreen({super.key});
+  const AddQuestionScreen({Key? key}) : super(key: key);
 
   @override
-  State<AddQuestionScreen> createState() => _SettingProfileScreenState();
+  State<AddQuestionScreen> createState() => _AddQuestionScreenState();
 }
 
-class _SettingProfileScreenState extends State<AddQuestionScreen> {
+class _AddQuestionScreenState extends State<AddQuestionScreen> {
   File? pickedFile;
 
   ImagePicker imagePicker = ImagePicker();
@@ -21,6 +21,18 @@ class _SettingProfileScreenState extends State<AddQuestionScreen> {
 
   int _currentIndex = 3;
 
+  TextEditingController titleController = TextEditingController();
+  TextEditingController questionController = TextEditingController();
+  TextEditingController answerController = TextEditingController();
+
+  @override
+  void dispose() {
+    titleController.dispose();
+    questionController.dispose();
+    answerController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     var isDark = MediaQuery.of(context).platformBrightness == Brightness.dark;
@@ -28,12 +40,13 @@ class _SettingProfileScreenState extends State<AddQuestionScreen> {
       appBar: AppBar(
         backgroundColor: Color(0xff4C88EC),
         title: Text(
-          'Add Question',
+          'Question',
         ),
         actions: [
           IconButton(
-              onPressed: () {},
-              icon: Icon(isDark ? Icons.light_mode : Icons.dark_mode)),
+            onPressed: () {},
+            icon: Icon(isDark ? Icons.light_mode : Icons.dark_mode),
+          ),
         ],
       ),
       body: SingleChildScrollView(
@@ -50,9 +63,7 @@ class _SettingProfileScreenState extends State<AddQuestionScreen> {
                       borderRadius: BorderRadius.circular(100),
                       child: Obx(
                         () => CircleAvatar(
-                          backgroundImage: pictureController
-                                      .isProficPicPathSet.value ==
-                                  true
+                          backgroundImage: pictureController.isProficPicPathSet.value == true
                               ? FileImage(
                                   File(pictureController.profilePicPath.value),
                                 ) as ImageProvider
@@ -81,8 +92,9 @@ class _SettingProfileScreenState extends State<AddQuestionScreen> {
                       onTap: () {
                         print("Camera clicked");
                         showModalBottomSheet(
-                            context: context,
-                            builder: (context) => bottomSheet(context));
+                          context: context,
+                          builder: (context) => bottomSheet(context),
+                        );
                       },
                     ),
                   ),
@@ -97,7 +109,7 @@ class _SettingProfileScreenState extends State<AddQuestionScreen> {
               ),
               const SizedBox(height: 15),
               const SizedBox(
-                height: 20,
+                height: 50,
               ),
               const Divider(),
               Container(
@@ -122,20 +134,32 @@ class _SettingProfileScreenState extends State<AddQuestionScreen> {
                     ),
                     Container(
                       margin: EdgeInsets.fromLTRB(0, 0, 0, 19),
-                      padding: EdgeInsets.fromLTRB(12, 11, 12, 11),
+                      padding: EdgeInsets.fromLTRB(12, 0, 12, 0),
                       width: double.infinity,
                       decoration: BoxDecoration(
                         border: Border.all(color: Color(0xffa8a8a8)),
                         borderRadius: BorderRadius.circular(8),
                       ),
-                      child: Text(
-                        '',
+                      child: TextFormField(
+                        controller: titleController,
                         style: GoogleFonts.poppins(
                           textStyle: TextStyle(
                             fontSize: 12,
                             fontWeight: FontWeight.w400,
                             height: 1.5,
                             color: Color(0xff000000),
+                          ),
+                        ),
+                        decoration: InputDecoration(
+                          border: InputBorder.none,
+                          hintText: 'Enter title',
+                          hintStyle: GoogleFonts.poppins(
+                            textStyle: TextStyle(
+                              fontSize: 12,
+                              fontWeight: FontWeight.w400,
+                              height: 1.5,
+                              color: Color(0xffa8a8a8),
+                            ),
                           ),
                         ),
                       ),
@@ -156,20 +180,32 @@ class _SettingProfileScreenState extends State<AddQuestionScreen> {
                     ),
                     Container(
                       margin: EdgeInsets.fromLTRB(0, 0, 0, 16),
-                      padding: EdgeInsets.fromLTRB(12, 10, 12, 12),
+                      padding: EdgeInsets.fromLTRB(12, 0, 12, 0),
                       width: double.infinity,
                       decoration: BoxDecoration(
                         border: Border.all(color: Color(0xffa8a8a8)),
                         borderRadius: BorderRadius.circular(8),
                       ),
-                      child: Text(
-                        '',
+                      child: TextFormField(
+                        controller: questionController,
                         style: GoogleFonts.poppins(
                           textStyle: TextStyle(
                             fontSize: 12,
                             fontWeight: FontWeight.w400,
                             height: 1.5,
                             color: Color(0xff000000),
+                          ),
+                        ),
+                        decoration: InputDecoration(
+                          border: InputBorder.none,
+                          hintText: 'Enter question',
+                          hintStyle: GoogleFonts.poppins(
+                            textStyle: TextStyle(
+                              fontSize: 12,
+                              fontWeight: FontWeight.w400,
+                              height: 1.5,
+                              color: Color(0xffa8a8a8),
+                            ),
                           ),
                         ),
                       ),
@@ -190,14 +226,14 @@ class _SettingProfileScreenState extends State<AddQuestionScreen> {
                     ),
                     Container(
                       margin: EdgeInsets.fromLTRB(0, 0, 0, 19),
-                      padding: EdgeInsets.fromLTRB(12, 11, 12, 11),
+                      padding: EdgeInsets.fromLTRB(12, 0, 12, 0),
                       width: double.infinity,
                       decoration: BoxDecoration(
                         border: Border.all(color: Color(0xffa8a8a8)),
                         borderRadius: BorderRadius.circular(8),
                       ),
-                      child: Text(
-                        '',
+                      child: TextFormField(
+                        controller: answerController,
                         style: GoogleFonts.poppins(
                           textStyle: TextStyle(
                             fontSize: 12,
@@ -206,11 +242,23 @@ class _SettingProfileScreenState extends State<AddQuestionScreen> {
                             color: Color(0xff000000),
                           ),
                         ),
+                        decoration: InputDecoration(
+                          border: InputBorder.none,
+                          hintText: 'Enter answer',
+                          hintStyle: GoogleFonts.poppins(
+                            textStyle: TextStyle(
+                              fontSize: 12,
+                              fontWeight: FontWeight.w400,
+                              height: 1.5,
+                              color: Color(0xffa8a8a8),
+                            ),
+                          ),
+                        ),
                       ),
                     ),
                     const SizedBox(height: 20),
                     Container(
-                      margin: EdgeInsets.fromLTRB(40, 0, 37, 125),
+                      margin: EdgeInsets.fromLTRB(38, 0, 37, 125),
                       width: double.infinity,
                       height: 40,
                       decoration: BoxDecoration(
@@ -278,8 +326,9 @@ class _SettingProfileScreenState extends State<AddQuestionScreen> {
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
           BottomNavigationBarItem(icon: Icon(Icons.settings), label: 'Setting'),
           BottomNavigationBarItem(
-              icon: Icon(Icons.person_pin_circle, color: Colors.red),
-              label: 'Monitor'),
+            icon: Icon(Icons.person_pin_circle, color: Colors.red),
+            label: 'Monitor',
+          ),
           BottomNavigationBarItem(icon: Icon(Icons.watch), label: 'Watch'),
           // BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
         ],
@@ -318,8 +367,7 @@ class _SettingProfileScreenState extends State<AddQuestionScreen> {
                     ),
                     Text(
                       "Gallery",
-                      style:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                      style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                     )
                   ],
                 ),
@@ -340,8 +388,7 @@ class _SettingProfileScreenState extends State<AddQuestionScreen> {
                     ),
                     Text(
                       "Camera",
-                      style:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                      style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                     )
                   ],
                 ),
@@ -357,8 +404,7 @@ class _SettingProfileScreenState extends State<AddQuestionScreen> {
   }
 
   Future<void> takePhoto(ImageSource source) async {
-    final pickedImage =
-        await imagePicker.pickImage(source: source, imageQuality: 100);
+    final pickedImage = await imagePicker.pickImage(source: source, imageQuality: 100);
 
     pickedFile = File(pickedImage!.path);
     pictureController.setProfileImagePatch(pickedFile!.path);
