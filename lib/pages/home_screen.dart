@@ -121,7 +121,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   width: 500,
                   height: 250,
                   child: Image.asset(
-                    'assets/images/map_image.png', // Your image asset path
+                    'assets/images/map_image.png',
                     fit: BoxFit.cover,
                   ),
                 ),
