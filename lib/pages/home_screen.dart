@@ -118,8 +118,16 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
                 Container(
+                  width: 500,
+                  height: 250,
+                  child: Image.asset(
+                    'assets/images/map_image.png', // Your image asset path
+                    fit: BoxFit.cover,
+                  ),
+                ),
+                Container(
                   child: Padding(
-                    padding: EdgeInsets.only(top: 240, left: 15, right: 15),
+                    padding: EdgeInsets.only(top: 35, left: 15, right: 15),
                     child: Column(
                       children: [
                         GridView.builder(
