@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:jam/pages/setting_screen.dart';
 import '../controller/picture_controller.dart';
 
 class SettingProfileScreen extends StatefulWidget {
@@ -44,12 +45,6 @@ class _SettingProfileScreenState extends State<SettingProfileScreen> {
         title: Text(
           'Profile',
         ),
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: Icon(isDark ? Icons.light_mode : Icons.dark_mode),
-          ),
-        ],
       ),
       body: SingleChildScrollView(
         child: Container(
@@ -307,14 +302,23 @@ class _SettingProfileScreenState extends State<SettingProfileScreen> {
                         borderRadius: BorderRadius.circular(10),
                       ),
                       child: Center(
-                        child: Text(
-                          'Update',
-                          style: GoogleFonts.poppins(
-                            textStyle: TextStyle(
-                              fontSize: 15,
-                              fontWeight: FontWeight.w700,
-                              height: 1.5,
-                              color: Color(0xffffffff),
+                        child: InkWell(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => SettingScreen()),
+                            );
+                          },
+                          child: Text(
+                            'Update',
+                            style: GoogleFonts.poppins(
+                              textStyle: TextStyle(
+                                fontSize: 15,
+                                fontWeight: FontWeight.w700,
+                                height: 1.5,
+                                color: Color(0xffffffff),
+                              ),
                             ),
                           ),
                         ),
