@@ -24,6 +24,9 @@ class _SettingPasswordScreenState extends State<SettingPasswordScreen> {
   TextEditingController oldPasswordController = TextEditingController();
   TextEditingController newPasswordController = TextEditingController();
   TextEditingController confirmPasswordController = TextEditingController();
+  bool isOldPasswordObscured = true;
+  bool isNewPasswordObscured = true;
+  bool isConfirmPasswordObscured = true;
 
   @override
   void dispose() {
@@ -63,7 +66,9 @@ class _SettingPasswordScreenState extends State<SettingPasswordScreen> {
                       borderRadius: BorderRadius.circular(100),
                       child: Obx(
                         () => CircleAvatar(
-                          backgroundImage: pictureController.isProficPicPathSet.value == true
+                          backgroundImage: pictureController
+                                      .isProficPicPathSet.value ==
+                                  true
                               ? FileImage(
                                   File(pictureController.profilePicPath.value),
                                 ) as ImageProvider
@@ -142,7 +147,7 @@ class _SettingPasswordScreenState extends State<SettingPasswordScreen> {
                             color: Color(0xff000000),
                           ),
                         ),
-                        obscureText: true,
+                        obscureText: isOldPasswordObscured,
                         decoration: InputDecoration(
                           border: InputBorder.none,
                           hintText: 'Enter old password',
@@ -153,6 +158,16 @@ class _SettingPasswordScreenState extends State<SettingPasswordScreen> {
                               height: 1.5,
                               color: Color(0xffa8a8a8),
                             ),
+                          ),
+                          suffixIcon: IconButton(
+                            onPressed: () {
+                              setState(() {
+                                isOldPasswordObscured = !isOldPasswordObscured;
+                              });
+                            },
+                            icon: Icon(isOldPasswordObscured
+                                ? Icons.visibility
+                                : Icons.visibility_off),
                           ),
                         ),
                       ),
@@ -189,7 +204,7 @@ class _SettingPasswordScreenState extends State<SettingPasswordScreen> {
                             color: Color(0xff000000),
                           ),
                         ),
-                        obscureText: true,
+                        obscureText: isNewPasswordObscured,
                         decoration: InputDecoration(
                           border: InputBorder.none,
                           hintText: 'Enter new password',
@@ -200,6 +215,16 @@ class _SettingPasswordScreenState extends State<SettingPasswordScreen> {
                               height: 1.5,
                               color: Color(0xffa8a8a8),
                             ),
+                          ),
+                          suffixIcon: IconButton(
+                            onPressed: () {
+                              setState(() {
+                                isNewPasswordObscured = !isNewPasswordObscured;
+                              });
+                            },
+                            icon: Icon(isNewPasswordObscured
+                                ? Icons.visibility
+                                : Icons.visibility_off),
                           ),
                         ),
                       ),
@@ -236,7 +261,7 @@ class _SettingPasswordScreenState extends State<SettingPasswordScreen> {
                             color: Color(0xff000000),
                           ),
                         ),
-                        obscureText: true,
+                        obscureText: isConfirmPasswordObscured,
                         decoration: InputDecoration(
                           border: InputBorder.none,
                           hintText: 'Confirm new password',
@@ -247,6 +272,17 @@ class _SettingPasswordScreenState extends State<SettingPasswordScreen> {
                               height: 1.5,
                               color: Color(0xffa8a8a8),
                             ),
+                          ),
+                          suffixIcon: IconButton(
+                            onPressed: () {
+                              setState(() {
+                                isConfirmPasswordObscured =
+                                    !isConfirmPasswordObscured;
+                              });
+                            },
+                            icon: Icon(isConfirmPasswordObscured
+                                ? Icons.visibility
+                                : Icons.visibility_off),
                           ),
                         ),
                       ),
@@ -361,7 +397,8 @@ class _SettingPasswordScreenState extends State<SettingPasswordScreen> {
                     ),
                     Text(
                       "Gallery",
-                      style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                     )
                   ],
                 ),
@@ -382,7 +419,8 @@ class _SettingPasswordScreenState extends State<SettingPasswordScreen> {
                     ),
                     Text(
                       "Camera",
-                      style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                     )
                   ],
                 ),
@@ -398,7 +436,8 @@ class _SettingPasswordScreenState extends State<SettingPasswordScreen> {
   }
 
   Future<void> takePhoto(ImageSource source) async {
-    final pickedImage = await imagePicker.pickImage(source: source, imageQuality: 100);
+    final pickedImage =
+        await imagePicker.pickImage(source: source, imageQuality: 100);
 
     pickedFile = File(pickedImage!.path);
     pictureController.setProfileImagePatch(pickedFile!.path);

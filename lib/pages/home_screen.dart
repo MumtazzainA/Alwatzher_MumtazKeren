@@ -118,8 +118,16 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ),
                 Container(
+                  width: 500,
+                  height: 250,
+                  child: Image.asset(
+                    'assets/images/map_image.png',
+                    fit: BoxFit.cover,
+                  ),
+                ),
+                Container(
                   child: Padding(
-                    padding: EdgeInsets.only(top: 240, left: 15, right: 15),
+                    padding: EdgeInsets.only(top: 35, left: 15, right: 15),
                     child: Column(
                       children: [
                         GridView.builder(
@@ -250,7 +258,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 break;
               case 2:
                 // Ketika item "Monitor" ditekan
-                Navigator.pushNamed(context, '/monitor');
+                //Navigator.pushNamed(context, '/monitor');
                 break;
               case 3:
                 // Ketika item "Watch" ditekan
