@@ -28,7 +28,7 @@ class _SplashEmergencyScreenState extends State<SplashEmergencyScreen> {
     return SafeArea(
       child: Scaffold(
         body: Container(
-          color: Colors.redAccent, // Set the desired background color
+          color: Colors.red, // Set the desired background color
           child: Stack(
             children: [
               Positioned(
