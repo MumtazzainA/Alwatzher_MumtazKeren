@@ -5,8 +5,11 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:jam/controller/picture_controller.dart';
 import 'package:jam/pages/add_question.dart';
+import 'package:jam/pages/list_of_question_screen.dart';
 import 'package:jam/pages/setting_profile_screen.dart';
 import 'package:jam/pages/setting_watch_profile_screen.dart';
+
+import 'list_of_activity_and_reminder_screen.dart';
 
 class WatchSettingScreen extends StatefulWidget {
   WatchSettingScreen({super.key});
@@ -38,11 +41,6 @@ class _WatchSettingScreenState extends State<WatchSettingScreen> {
         title: Text(
           'Settting',
         ),
-        actions: [
-          IconButton(
-              onPressed: () {},
-              icon: Icon(isDark ? Icons.light_mode : Icons.dark_mode)),
-        ],
       ),
       body: SingleChildScrollView(
         child: Container(
@@ -153,7 +151,11 @@ class _WatchSettingScreenState extends State<WatchSettingScreen> {
                     ),
                     title: Text('Ask Alwatzer'),
                     onTap: () {
-                      //  Ask Alwatzer
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => QuestionListScreen()),
+                      );
                     },
                     trailing: Container(
                       child: const Icon(Icons.arrow_forward_ios),
@@ -165,7 +167,11 @@ class _WatchSettingScreenState extends State<WatchSettingScreen> {
                     ),
                     title: Text('Alarm & Activity'),
                     onTap: () {
-                      //  Alarm & Activity
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => ListActivityFeatureScreen()),
+                      );
                     },
                     trailing: Container(
                       child: const Icon(Icons.arrow_forward_ios),

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:jam/pages/list_of_question_screen.dart';
 import '../controller/picture_controller.dart';
 
 class EditQuestionScreen extends StatefulWidget {
@@ -42,12 +43,6 @@ class _EditQuestionScreenState extends State<EditQuestionScreen> {
         title: Text(
           'Question',
         ),
-        actions: [
-          IconButton(
-            onPressed: () {},
-            icon: Icon(isDark ? Icons.light_mode : Icons.dark_mode),
-          ),
-        ],
       ),
       body: SingleChildScrollView(
         child: Container(
@@ -63,7 +58,9 @@ class _EditQuestionScreenState extends State<EditQuestionScreen> {
                       borderRadius: BorderRadius.circular(100),
                       child: Obx(
                         () => CircleAvatar(
-                          backgroundImage: pictureController.isProficPicPathSet.value == true
+                          backgroundImage: pictureController
+                                      .isProficPicPathSet.value ==
+                                  true
                               ? FileImage(
                                   File(pictureController.profilePicPath.value),
                                 ) as ImageProvider
@@ -266,14 +263,23 @@ class _EditQuestionScreenState extends State<EditQuestionScreen> {
                         borderRadius: BorderRadius.circular(10),
                       ),
                       child: Center(
-                        child: Text(
-                          'Update',
-                          style: GoogleFonts.poppins(
-                            textStyle: TextStyle(
-                              fontSize: 15,
-                              fontWeight: FontWeight.w700,
-                              height: 1.5,
-                              color: Color(0xffffffff),
+                        child: InkWell(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => QuestionListScreen()),
+                            );
+                          },
+                          child: Text(
+                            'Update',
+                            style: GoogleFonts.poppins(
+                              textStyle: TextStyle(
+                                fontSize: 15,
+                                fontWeight: FontWeight.w700,
+                                height: 1.5,
+                                color: Color(0xffffffff),
+                              ),
                             ),
                           ),
                         ),
@@ -367,7 +373,8 @@ class _EditQuestionScreenState extends State<EditQuestionScreen> {
                     ),
                     Text(
                       "Gallery",
-                      style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                     )
                   ],
                 ),
@@ -388,7 +395,8 @@ class _EditQuestionScreenState extends State<EditQuestionScreen> {
                     ),
                     Text(
                       "Camera",
-                      style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                     )
                   ],
                 ),
@@ -404,7 +412,8 @@ class _EditQuestionScreenState extends State<EditQuestionScreen> {
   }
 
   Future<void> takePhoto(ImageSource source) async {
-    final pickedImage = await imagePicker.pickImage(source: source, imageQuality: 100);
+    final pickedImage =
+        await imagePicker.pickImage(source: source, imageQuality: 100);
 
     pickedFile = File(pickedImage!.path);
     pictureController.setProfileImagePatch(pickedFile!.path);
