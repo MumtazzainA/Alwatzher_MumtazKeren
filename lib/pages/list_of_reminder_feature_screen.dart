@@ -47,7 +47,8 @@ class _QuestionScreenState extends State<ReminderListScreen> {
               Text(
                 "Set Your Family Activity",
                 style: GoogleFonts.poppins(
-                  textStyle: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
+                  textStyle:
+                      TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
                 ),
               ),
               const Divider(),
@@ -73,7 +74,8 @@ class _QuestionScreenState extends State<ReminderListScreen> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => ListActivityFeatureScreen()),
+                              builder: (context) =>
+                                  ListActivityFeatureScreen()),
                         );
                       },
                       trailing: Container(
@@ -94,7 +96,8 @@ class _QuestionScreenState extends State<ReminderListScreen> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => ListActivityFeatureScreen2()),
+                              builder: (context) =>
+                                  ListActivityFeatureScreen()),
                         );
                       },
                       trailing: Container(

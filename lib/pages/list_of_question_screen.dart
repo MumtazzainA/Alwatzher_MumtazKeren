@@ -107,7 +107,6 @@ class _QuestionScreenState extends State<QuestionListScreen> {
               Container(
                 height: 700,
                 child: Positioned(
-               
                   right: 147.0,
                   child: GestureDetector(
                     onTap: () {

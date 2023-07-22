@@ -1,4 +1,4 @@
-import '../models/activity_model.dart';
+import '/models/activity_model.dart';
 
 List<ReminderInfo> reminders = [
   ReminderInfo(DateTime.now().add(Duration(hours: 1)),

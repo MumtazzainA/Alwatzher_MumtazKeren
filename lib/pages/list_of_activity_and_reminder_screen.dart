@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:jam/clipPath/clippath_activity_box.dart';
+import 'package:jam/pages/add_question.dart';
+import 'package:jam/pages/set_reminder_screen.dart';
 import 'package:jam/switch%20button/switch_button.dart';
 
 class ListActivityFeatureScreen extends StatefulWidget {
@@ -248,7 +250,7 @@ class _ListActivityFeatureScreenState extends State<ListActivityFeatureScreen> {
                                         ),
                                       ),
                                       SizedBox(
-                                        width: 53,
+                                        width: 73,
                                       ),
                                       Container(
                                         constraints: BoxConstraints(
@@ -273,34 +275,31 @@ class _ListActivityFeatureScreenState extends State<ListActivityFeatureScreen> {
                         ),
                       ),
                     ),
-                    Column(
-                      children: [
-                        Container(
-                          height: 2,
-                          child: Center(
-                            child: GestureDetector(
-                              onTap: () {
-                                // Navigator.push(
-                                //   context,
-                                //   MaterialPageRoute(
-                                //       builder: (context) => AddQuestionScreen()),
-                                // );
-                              },
-                              child: SizedBox(
-                                width: 40.0,
-                                height: 40.0,
-                                child: Icon(
-                                  Icons.add_circle,
-                                  size: 40,
-                                  color: Color(0xff4C88EC),
-                                ),
-                              ),
+                    Container(
+                      height: 30,
+                      child: Center(
+                        child: GestureDetector(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => SetReminderScreen()),
+                            );
+                          },
+                          child: SizedBox(
+                            width: 40.0,
+                            height: 40.0,
+                            child: Icon(
+                              Icons.add_circle,
+                              size: 40,
+                              color: Color(0xff4C88EC),
                             ),
                           ),
                         ),
-                        SizedBox(
-                          height: 30,
-                        ),
+                      ),
+                    ),
+                    Column(
+                      children: [
                         Container(
                           padding: EdgeInsets.all(15),
                           child: Row(
@@ -323,14 +322,13 @@ class _ListActivityFeatureScreenState extends State<ListActivityFeatureScreen> {
                     Container(
                       // padding: EdgeInsets.all(15),
                       height: 210,
-                      child:  SingleChildScrollView(
+                      child: SingleChildScrollView(
                         child: Column(
                           children: [
                             //List Bar
                             Container(
                               padding: EdgeInsets.all(15),
-                              margin:
-                                  EdgeInsets.symmetric(horizontal: 15),
+                              margin: EdgeInsets.symmetric(horizontal: 15),
                               height: 100,
                               decoration: BoxDecoration(
                                 border: Border.all(color: Colors.white),
@@ -359,16 +357,14 @@ class _ListActivityFeatureScreenState extends State<ListActivityFeatureScreen> {
                                             fontSize: 28,
                                             fontWeight: FontWeight.w500,
                                             height: 1.3025,
-                                            color: Color.fromARGB(
-                                                255, 0, 0, 0),
+                                            color: Color.fromARGB(255, 0, 0, 0),
                                           ),
                                           children: [
                                             TextSpan(
                                               text: "am",
                                               style: GoogleFonts.dmSans(
                                                 fontSize: 12,
-                                                fontWeight:
-                                                    FontWeight.w400,
+                                                fontWeight: FontWeight.w400,
                                                 height: 1.3025,
                                                 color: Color.fromARGB(
                                                     255, 0, 0, 0),
@@ -409,8 +405,7 @@ class _ListActivityFeatureScreenState extends State<ListActivityFeatureScreen> {
                             //List Bar
                             Container(
                               padding: EdgeInsets.all(15),
-                              margin:
-                                  EdgeInsets.symmetric(horizontal: 15),
+                              margin: EdgeInsets.symmetric(horizontal: 15),
                               height: 100,
                               decoration: BoxDecoration(
                                 border: Border.all(color: Colors.white),
@@ -439,16 +434,14 @@ class _ListActivityFeatureScreenState extends State<ListActivityFeatureScreen> {
                                             fontSize: 28,
                                             fontWeight: FontWeight.w500,
                                             height: 1.3025,
-                                            color: Color.fromARGB(
-                                                255, 0, 0, 0),
+                                            color: Color.fromARGB(255, 0, 0, 0),
                                           ),
                                           children: [
                                             TextSpan(
                                               text: "am",
                                               style: GoogleFonts.dmSans(
                                                 fontSize: 12,
-                                                fontWeight:
-                                                    FontWeight.w400,
+                                                fontWeight: FontWeight.w400,
                                                 height: 1.3025,
                                                 color: Color.fromARGB(
                                                     255, 0, 0, 0),
@@ -488,15 +481,15 @@ class _ListActivityFeatureScreenState extends State<ListActivityFeatureScreen> {
                       ),
                     ),
                     Container(
-                      height: 5,
+                      height: 40,
                       child: Center(
                         child: GestureDetector(
                           onTap: () {
-                            // Navigator.push(
-                            //   context,
-                            //   MaterialPageRoute(
-                            //       builder: (context) => AddQuestionScreen()),
-                            // );
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => SetReminderScreen()),
+                            );
                           },
                           child: SizedBox(
                             width: 40.0,
