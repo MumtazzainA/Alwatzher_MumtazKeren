@@ -5,7 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:jam/controller/picture_controller.dart';
 import 'package:jam/pages/add_question.dart';
-import 'package:jam/pages/helpsupport_screen.dart';
+import 'package:jam/pages/help_support_screen.dart';
 import 'package:jam/pages/list_of_ask_feature_screen.dart';
 import 'package:jam/pages/login_screen.dart';
 import 'package:jam/pages/setting_password_screen.dart';

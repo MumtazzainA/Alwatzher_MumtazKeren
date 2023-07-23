@@ -59,7 +59,7 @@ class _SetReminderScreenState extends State<SetReminderScreen> {
                       });
                     },
                     textStyle:
-                        GoogleFonts.dmSans(color: Colors.grey, fontSize: 40),
+                        GoogleFonts.dmSans(color: Colors.grey, fontSize: 30),
                     selectedTextStyle:
                         GoogleFonts.dmSans(color: Colors.black, fontSize: 40),
                   ),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:jam/pages/connect_screen.dart';
-import 'package:jam/pages/emergencycall_screen.dart';
+import 'package:jam/pages/emergency_call_screen.dart';
 import 'package:jam/pages/information_screen.dart';
 import 'package:jam/pages/list_of_question_screen.dart';
 import 'package:jam/pages/list_of_reminder_feature_screen.dart';
@@ -68,57 +68,24 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: Stack(
-          children: [
-            Positioned(
-              top: 0,
-              left: 0,
-              right: 0,
-              child: Container(
-                child: Image.asset(
-                  'assets/images/top.png', // Gambar di bagian atas halaman
-                  fit: BoxFit.cover,
-                  // height: MediaQuery.of(context).size.height * 0.1,
-                ),
+    return Scaffold(
+      body: Stack(
+        children: [
+          Positioned(
+            top: 0,
+            left: 0,
+            right: 0,
+            child: Container(
+              child: Image.asset(
+                'assets/images/top.png', // Gambar di bagian atas halaman
+                fit: BoxFit.cover,
+                // height: MediaQuery.of(context).size.height * 0.1,
               ),
             ),
-            Column(
-              children: [
-                //app bar
-                Padding(
-                  padding: const EdgeInsets.symmetric(
-                      horizontal: 25.0, vertical: 70),
-                  child: Column(
-                    children: [
-                      Column(
-                        children: [
-                          Image.asset(
-                            "assets/images/LogoHome.png", //Logo dashboard
-                            width: 81,
-                            height: 77,
-                          ),
-                          Text(
-                            'Welcome To Alwatzer',
-                            style: GoogleFonts.poppins(
-                              textStyle: TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ),
-                          Text(
-                            'Dementia Is Not a Hindrance To Freedom',
-                            textAlign: TextAlign.center,
-                            style: GoogleFonts.poppins(),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                ),
-                Container(
+          ),
+          Positioned(
+            top: 240,
+            child: Container(
                   width: 500,
                   height: 250,
                   child: Image.asset(
@@ -126,162 +93,193 @@ class _HomeScreenState extends State<HomeScreen> {
                     fit: BoxFit.cover,
                   ),
                 ),
-                Container(
-                  child: Padding(
-                    padding: EdgeInsets.only(top: 35, left: 15, right: 15),
-                    child: Column(
-                      children: [
-                        GridView.builder(
-                          itemCount: catNames.length,
-                          shrinkWrap: true,
-                          physics: NeverScrollableScrollPhysics(),
-                          gridDelegate:
-                              SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: 3,
-                            childAspectRatio: 1.1,
-                          ),
-                          itemBuilder: (context, index) {
-                            return GestureDetector(
-                              onTap: () {
-                                setState(() {
-                                  _currentIndex2 = index;
-                                });
-                                switch (index) {
-                                  case 0:
-                                    // Ketika item "Connect" ditekan
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) =>
-                                              ConnectScreen()),
-                                    );
-                                    break;
-                                  case 1:
-                                    // Ketika item "Ask" ditekan
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) =>
-                                              QuestionListScreen()),
-                                    );
-                                    break;
-                                  case 2:
-                                    // Ketika item "Reminder" ditekan
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) =>
-                                              ReminderListScreen()),
-                                    );
-                                    break;
-                                  case 3:
-                                    // Ketika item "Information" ditekan
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) =>
-                                              InformationScreen()),
-                                    );
-                                    break;
-                                  case 4:
-                                    // Ketika item "Emergency" ditekan
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) => EmergencyScreen()),
-                                    );
-                                    break;
-                                  case 5:
-                                    // Ketika item "Address" ditekan
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) =>
-                                              AddressListFeature()),
-                                    );
-                                    break;
-                                }
-                              },
-                              child: Column(
-                                children: [
-                                  Container(
-                                    height: 60,
-                                    width: 60,
-                                    decoration: BoxDecoration(
-                                      color: catColors[index],
-                                      shape: BoxShape.circle,
-                                    ),
-                                    child: Center(child: catIcons[index]),
-                                  ),
-                                  SizedBox(height: 10),
-                                  Text(
-                                    catNames[index],
-                                    style: TextStyle(
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.w400,
-                                      color: Colors.black,
-                                    ),
-                                  )
-                                ],
-                              ),
-                            );
-                          },
-                        ),
-                      ],
+          ),
+          Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                    horizontal: 25.0, vertical: 70),
+                child: Column(
+                  children: [
+                    Image.asset(
+                      "assets/images/LogoHome.png", //Logo dashboard
+                      width: 81,
+                      height: 77,
                     ),
+                    Text(
+                      'Welcome To Alwatzer',
+                      style: GoogleFonts.poppins(
+                        textStyle: TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
+                    Text(
+                      'Dementia Is Not a Hindrance To Freedom',
+                      textAlign: TextAlign.center,
+                      style: GoogleFonts.poppins(),
+                    ),
+                  ],
+                ),
+              ),
+              
+              Container(
+                child: Padding(
+                  padding: EdgeInsets.only(top: 237, left: 15, right: 15),
+                  child: Column(
+                    children: [
+                      GridView.builder(
+                        itemCount: catNames.length,
+                        shrinkWrap: true,
+                        physics: NeverScrollableScrollPhysics(),
+                        gridDelegate:
+                            SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: 3,
+                          childAspectRatio: 1.1,
+                        ),
+                        itemBuilder: (context, index) {
+                          return GestureDetector(
+                            onTap: () {
+                              setState(() {
+                                _currentIndex2 = index;
+                              });
+                              switch (index) {
+                                case 0:
+                                  // Ketika item "Connect" ditekan
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            ConnectScreen()),
+                                  );
+                                  break;
+                                case 1:
+                                  // Ketika item "Ask" ditekan
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            QuestionListScreen()),
+                                  );
+                                  break;
+                                case 2:
+                                  // Ketika item "Reminder" ditekan
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            ReminderListScreen()),
+                                  );
+                                  break;
+                                case 3:
+                                  // Ketika item "Information" ditekan
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            InformationScreen()),
+                                  );
+                                  break;
+                                case 4:
+                                  // Ketika item "Emergency" ditekan
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            EmergencyScreen()),
+                                  );
+                                  break;
+                                case 5:
+                                  // Ketika item "Address" ditekan
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            AddressListFeature()),
+                                  );
+                                  break;
+                              }
+                            },
+                            child: Column(
+                              children: [
+                                Container(
+                                  height: 60,
+                                  width: 60,
+                                  decoration: BoxDecoration(
+                                    color: catColors[index],
+                                    shape: BoxShape.circle,
+                                  ),
+                                  child: Center(child: catIcons[index]),
+                                ),
+                                SizedBox(height: 10),
+                                Text(
+                                  catNames[index],
+                                  style: TextStyle(
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w400,
+                                    color: Colors.black,
+                                  ),
+                                )
+                              ],
+                            ),
+                          );
+                        },
+                      ),
+                    ],
                   ),
                 ),
-              ],
-            )
-          ],
-        ),
-        bottomNavigationBar: BottomNavigationBar(
-          showUnselectedLabels: true,
-          iconSize: 25,
-          selectedItemColor: Color(0xff526CC8),
-          selectedFontSize: 15,
-          unselectedFontSize: 10,
-          unselectedItemColor: Colors.grey,
-          currentIndex: _currentIndex,
-          onTap: (int index) {
-            setState(() {
-              _currentIndex = index;
-            });
+              ),
+            ],
+          )
+        ],
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        showUnselectedLabels: true,
+        iconSize: 25,
+        selectedItemColor: Color(0xff526CC8),
+        selectedFontSize: 15,
+        unselectedFontSize: 10,
+        unselectedItemColor: Colors.grey,
+        currentIndex: _currentIndex,
+        onTap: (int index) {
+          setState(() {
+            _currentIndex = index;
+          });
 
-            switch (index) {
-              case 0:
-                // Ketika item "Home" ditekan
-                Navigator.pushNamed(context, '/home');
-                break;
-              case 1:
-                // Ketika item "Setting" ditekan
-                Navigator.pushNamed(context, '/setting');
-                break;
-              case 2:
-                // Ketika item "Monitor" ditekan
-                //Navigator.pushNamed(context, '/monitor');
-                break;
-              case 3:
-                // Ketika item "Watch" ditekan
-                Navigator.pushNamed(context, '/watch');
-                break;
-              case 4:
-                // Ketika item "Profile" ditekan
-                Navigator.pushNamed(context, '/profile');
-                break;
-            }
-          },
-          items: [
-            BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.settings), label: 'Setting'),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.person_pin_circle, color: Colors.red),
-                label: 'Monitor'),
-            BottomNavigationBarItem(icon: Icon(Icons.watch), label: 'Watch'),
-            // BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
-          ],
-        ),
+          switch (index) {
+            case 0:
+              // Ketika item "Home" ditekan
+              Navigator.pushNamed(context, '/home');
+              break;
+            case 1:
+              // Ketika item "Setting" ditekan
+              Navigator.pushNamed(context, '/setting');
+              break;
+            case 2:
+              // Ketika item "Monitor" ditekan
+              Navigator.pushNamed(context, '/monitor');
+              break;
+            case 3:
+              // Ketika item "Watch" ditekan
+              Navigator.pushNamed(context, '/watch');
+              break;
+            case 4:
+              // Ketika item "Profile" ditekan
+              Navigator.pushNamed(context, '/profile');
+              break;
+          }
+        },
+        items: [
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.settings), label: 'Setting'),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.person_pin_circle, color: Colors.red),
+              label: 'Monitor'),
+          BottomNavigationBarItem(icon: Icon(Icons.watch), label: 'Watch'),
+          // BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
+        ],
       ),
     );
   }
