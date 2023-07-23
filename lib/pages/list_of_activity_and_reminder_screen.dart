@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:jam/clipPath/clippath_activity_box.dart';
 import 'package:jam/pages/add_question.dart';
+import 'package:jam/pages/set_activity_screen.dart';
 import 'package:jam/pages/set_reminder_screen.dart';
 import 'package:jam/switch%20button/switch_button.dart';
 
@@ -236,7 +237,14 @@ class _ListActivityFeatureScreenState extends State<ListActivityFeatureScreen> {
                                   Row(
                                     children: [
                                       ElevatedButton(
-                                        onPressed: () {},
+                                        onPressed: () {
+                                          Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    SetActivityScreen()),
+                                          );
+                                        },
                                         child: Text(
                                           "Set activity hour",
                                           style: GoogleFonts.dmSans(
@@ -283,7 +291,7 @@ class _ListActivityFeatureScreenState extends State<ListActivityFeatureScreen> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => SetReminderScreen()),
+                                  builder: (context) => SetActivityScreen()),
                             );
                           },
                           child: SizedBox(
@@ -325,6 +333,9 @@ class _ListActivityFeatureScreenState extends State<ListActivityFeatureScreen> {
                       child: SingleChildScrollView(
                         child: Column(
                           children: [
+                            SizedBox(
+                              height: 3,
+                            ),
                             //List Bar
                             Container(
                               padding: EdgeInsets.all(15),

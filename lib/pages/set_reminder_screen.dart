@@ -12,6 +12,7 @@ class SetReminderScreen extends StatefulWidget {
 }
 
 class _SetReminderScreenState extends State<SetReminderScreen> {
+  Set<int> selectedIndices = {};
   var hour = 0;
   var minute = 0;
   var timeFormat = "am";
@@ -198,6 +199,23 @@ class _SetReminderScreenState extends State<SetReminderScreen> {
             SizedBox(
               height: 10,
             ),
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                _buildDayItem("M", 0),
+                _buildDayItem("T", 1),
+                _buildDayItem("W", 2),
+                _buildDayItem("T", 3),
+                _buildDayItem("F", 4),
+                _buildDayItem("S", 5),
+                _buildDayItem("S", 6),
+              ],
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            //Reminder name
             Container(
               margin: EdgeInsets.fromLTRB(0, 0, 0, 19),
               padding: EdgeInsets.fromLTRB(12, 0, 12, 0),
@@ -234,9 +252,8 @@ class _SetReminderScreenState extends State<SetReminderScreen> {
               child: Column(
                 children: [
                   Container(
-                    padding: EdgeInsets.all(15),
-                    margin: EdgeInsets.symmetric(horizontal: 0),
-                    height: 75,
+                    padding: EdgeInsets.all(10),
+                    height: 70,
                     // decoration: BoxDecoration(
                     //   border: Border.all(color: Colors.white),
                     //   borderRadius: BorderRadius.all(Radius.circular(20)),
@@ -282,13 +299,10 @@ class _SetReminderScreenState extends State<SetReminderScreen> {
                       ],
                     ),
                   ),
-                  SizedBox(
-                    height: 5,
-                  ),
                   Container(
-                    padding: EdgeInsets.all(15),
-                    margin: EdgeInsets.symmetric(horizontal: 0),
-                    height: 75,
+                    padding: EdgeInsets.all(10),
+
+                    height: 70,
                     // decoration: BoxDecoration(
                     //   border: Border.all(color: Colors.white),
                     //   borderRadius: BorderRadius.all(Radius.circular(20)),
@@ -334,13 +348,10 @@ class _SetReminderScreenState extends State<SetReminderScreen> {
                       ],
                     ),
                   ),
-                  SizedBox(
-                    height: 5,
-                  ),
                   Container(
-                    padding: EdgeInsets.all(15),
-                    margin: EdgeInsets.symmetric(horizontal: 0),
-                    height: 75,
+                    padding: EdgeInsets.all(10),
+
+                    height: 70,
                     // decoration: BoxDecoration(
                     //   border: Border.all(color: Colors.white),
                     //   borderRadius: BorderRadius.all(Radius.circular(20)),
@@ -386,13 +397,10 @@ class _SetReminderScreenState extends State<SetReminderScreen> {
                       ],
                     ),
                   ),
-                  SizedBox(
-                    height: 5,
-                  ),
                   Container(
-                    padding: EdgeInsets.all(15),
-                    margin: EdgeInsets.symmetric(horizontal: 0),
-                    height: 75,
+                    padding: EdgeInsets.all(10),
+
+                    height: 70,
                     // decoration: BoxDecoration(
                     //   border: Border.all(color: Colors.white),
                     //   borderRadius: BorderRadius.all(Radius.circular(20)),
@@ -489,6 +497,46 @@ class _SetReminderScreenState extends State<SetReminderScreen> {
           BottomNavigationBarItem(icon: Icon(Icons.watch), label: 'Watch'),
           // BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
         ],
+      ),
+    );
+  }
+
+  Widget _buildDayItem(String dayText, int index) {
+    bool isSelected = selectedIndices.contains(index);
+    bool isLastLetter = index == 6;
+    return GestureDetector(
+      onTap: () {
+        setState(() {
+          if (isSelected) {
+            selectedIndices.remove(index);
+          } else {
+            selectedIndices.add(index);
+          }
+        });
+      },
+      child: Container(
+        width: 35,
+        height: 35,
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          color: isSelected ? Colors.blue : Colors.transparent,
+        ),
+        child: Center(
+          child: Text(
+            dayText,
+            style: GoogleFonts.dmSans(
+              textStyle: TextStyle(
+                fontWeight: FontWeight.normal,
+                fontSize: 16,
+                color: isLastLetter && !isSelected
+                    ? Colors.red
+                    : isSelected
+                        ? Colors.white
+                        : Colors.black,
+              ),
+            ),
+          ),
+        ),
       ),
     );
   }
