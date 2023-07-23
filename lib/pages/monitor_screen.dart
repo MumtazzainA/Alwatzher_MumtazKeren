@@ -10,19 +10,24 @@ class MonitorScreen extends StatelessWidget {
     return Stack(
       children: [
         Scaffold(
+          extendBodyBehindAppBar:
+              true, // Make the body extend behind the AppBar
           appBar: AppBar(
-            backgroundColor: Colors.white,
-            elevation: 0,
+            backgroundColor:
+                Colors.transparent, // Set the AppBar background to transparent
+            elevation: 0, // Remove the shadow
             leading: BackButton(
-              color: Colors.black, // Set the back icon color to black
+              color: Colors.white, // Set the back icon color to black
             ),
           ),
           backgroundColor: Colors.white,
-          body: Container(
-            width: 500,
-            child: Image.asset(
-              "assets/images/map2.png",
-              fit: BoxFit.cover,
+          body: SingleChildScrollView(
+            child: Container(
+              width: 500,
+              child: Image.asset(
+                "assets/images/map2.png",
+                fit: BoxFit.cover,
+              ),
             ),
           ),
         ),
