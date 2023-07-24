@@ -65,10 +65,10 @@ class _ListActivityFeatureScreenState
                       ],
                     ),
                     child: Column(
-                      children: [
+                      children: <Widget>[
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
+                          children: <Widget>[
                             Positioned(
                               left: 23,
                               top: 11,
