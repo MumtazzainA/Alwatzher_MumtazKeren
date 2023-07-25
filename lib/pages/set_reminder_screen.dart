@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:jam/pages/list_of_activity_and_reminder_screen.dart';
 import 'package:numberpicker/numberpicker.dart';
 
 import '../switch button/switch_button.dart';
@@ -451,12 +452,12 @@ class _SetReminderScreenState extends State<SetReminderScreen> {
             ),
             ElevatedButton(
               onPressed: () {
-                // Navigator.push(
-                //   context,
-                //   MaterialPageRoute(
-                //       builder: (context) =>
-                //           // SetActivityScreen()),
-                // );
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) =>
+                          ListActivityFeatureScreen()),
+                );
               },
               child: Text(
                 "Save",
