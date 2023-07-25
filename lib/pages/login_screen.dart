@@ -4,9 +4,9 @@ import 'package:google_fonts/google_fonts.dart';
 import 'home_screen.dart';
 
 const users = const {
+  'arwandifam@gmail.com': 'arwanfam',
   'dribbble@gmail.com': '12345',
-  'hunter@gmail.com': 'hunter',
-  'arwandifam@gmail.com': 'arwanfam' 
+  'hunter@gmail.com': 'hunter'
 };
 
 class LoginScreen extends StatelessWidget {
