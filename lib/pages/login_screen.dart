@@ -4,7 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'home_screen.dart';
 
 const users = const {
-  'arwandifam@gmail.com': 'arwanfam',
+  'arwandifam@gmail.com': 'arwandifam',
   'dribbble@gmail.com': '12345',
   'hunter@gmail.com': 'hunter'
 };
