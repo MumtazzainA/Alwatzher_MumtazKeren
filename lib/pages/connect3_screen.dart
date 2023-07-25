@@ -16,7 +16,7 @@ class _Connect3ScreenState extends State<Connect3Screen> {
   void initState() {
     super.initState();
     Timer(
-      Duration(seconds: 2),
+      Duration(seconds: 4),
       () => Navigator.pushReplacement(
         context,
         MaterialPageRoute(builder: (context) => Connect2Screen()),
