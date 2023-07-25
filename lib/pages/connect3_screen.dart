@@ -1,5 +1,8 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:jam/pages/connect2_screen.dart';
 
 class Connect3Screen extends StatefulWidget {
   const Connect3Screen({super.key});
@@ -9,6 +12,17 @@ class Connect3Screen extends StatefulWidget {
 }
 
 class _Connect3ScreenState extends State<Connect3Screen> {
+  @override
+  void initState() {
+    super.initState();
+    Timer(
+      Duration(seconds: 2),
+      () => Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => Connect2Screen()),
+      ),
+    );
+  }
   @override
   Widget build(BuildContext context) {
     return SafeArea(
