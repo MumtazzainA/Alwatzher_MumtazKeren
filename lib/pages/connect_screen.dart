@@ -67,7 +67,7 @@ class _ConnectScreenState extends State<ConnectScreen> {
                     ),
                   ),
                   title: Text(
-                    'Alwatzher Series 1',
+                    'Alwatzer Series 1',
                     style: GoogleFonts.inter(
                         textStyle: TextStyle(
                             fontSize: 16, fontWeight: FontWeight.w500)),
@@ -87,7 +87,7 @@ class _ConnectScreenState extends State<ConnectScreen> {
                     child: Icon(Icons.watch, color: Colors.black),
                   ),
                   title: Text(
-                    'Alwatzher Series 2',
+                    'Alwatzer Series 2',
                     style: GoogleFonts.inter(
                         textStyle: TextStyle(
                             fontSize: 16, fontWeight: FontWeight.w500)),

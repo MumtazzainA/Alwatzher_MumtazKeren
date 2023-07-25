@@ -143,7 +143,7 @@ class _SettingProfileScreenState extends State<SettingProfileScreen> {
                         ),
                         decoration: InputDecoration(
                           border: InputBorder.none,
-                          hintText: 'Enter username',
+                          hintText: 'Arwandi Fam',
                           hintStyle: GoogleFonts.poppins(
                             textStyle: TextStyle(
                               fontSize: 12,
@@ -189,7 +189,7 @@ class _SettingProfileScreenState extends State<SettingProfileScreen> {
                         ),
                         decoration: InputDecoration(
                           border: InputBorder.none,
-                          hintText: 'Enter email',
+                          hintText: 'arwandifam@gmail.com',
                           hintStyle: GoogleFonts.poppins(
                             textStyle: TextStyle(
                               fontSize: 12,
@@ -235,7 +235,7 @@ class _SettingProfileScreenState extends State<SettingProfileScreen> {
                         ),
                         decoration: InputDecoration(
                           border: InputBorder.none,
-                          hintText: 'Enter phone number',
+                          hintText: '+628123456789',
                           hintStyle: GoogleFonts.poppins(
                             textStyle: TextStyle(
                               fontSize: 12,
@@ -281,7 +281,7 @@ class _SettingProfileScreenState extends State<SettingProfileScreen> {
                         ),
                         decoration: InputDecoration(
                           border: InputBorder.none,
-                          hintText: 'Enter address',
+                          hintText: 'Jl. Sukamaju Nomor 10',
                           hintStyle: GoogleFonts.poppins(
                             textStyle: TextStyle(
                               fontSize: 12,

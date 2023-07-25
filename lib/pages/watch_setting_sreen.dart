@@ -39,7 +39,7 @@ class _WatchSettingScreenState extends State<WatchSettingScreen> {
       appBar: AppBar(
         backgroundColor: Color(0xff4C88EC),
         title: Text(
-          'Settting',
+          'Setting',
         ),
       ),
       body: SingleChildScrollView(
@@ -95,7 +95,7 @@ class _WatchSettingScreenState extends State<WatchSettingScreen> {
             ),
             const SizedBox(height: 10),
             Text(
-              "Mr. Abudabu",
+              "Mr. Arwandi",
               style: GoogleFonts.poppins(
                 textStyle: TextStyle(fontWeight: FontWeight.normal),
               ),

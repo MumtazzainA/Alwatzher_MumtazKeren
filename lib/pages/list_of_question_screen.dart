@@ -45,7 +45,7 @@ class _QuestionScreenState extends State<QuestionListScreen> {
               ),
               const SizedBox(height: 10),
               Text(
-                "Mr. Abudabu",
+                "Mr. Arwandi",
                 style: GoogleFonts.poppins(
                   textStyle: TextStyle(fontWeight: FontWeight.normal),
                 ),

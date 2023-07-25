@@ -100,7 +100,7 @@ class _ListAskAlwatzerScreenState extends State<AskAlwatzerListScreen> {
               top: 170.0,
               left: 100.0,
               child: Text(
-                'Alwatzher Series 1',
+                'Alwatzer Series 1',
                 style: GoogleFonts.inter(
                     fontSize: 16.0,
                     fontWeight: FontWeight.w500,// "Medium" weight
@@ -142,7 +142,7 @@ class _ListAskAlwatzerScreenState extends State<AskAlwatzerListScreen> {
               top: 230.0,
               left: 100.0,
               child: Text(
-                'Alwatzher Series 2',
+                'Alwatzer Series 2',
                 style: GoogleFonts.inter(
                     fontSize: 16.0,
                     fontWeight: FontWeight.w500,// "Medium" weight

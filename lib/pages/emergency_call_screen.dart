@@ -21,7 +21,7 @@ class _EmergencyScreenState extends State<EmergencyScreen> {
             children: [
               Positioned(
                 top: 140.0,
-                left: 160.0,
+                left: 150.0,
                 child: Text(
                   'Calling...',
                   style: GoogleFonts.inter(
@@ -33,9 +33,9 @@ class _EmergencyScreenState extends State<EmergencyScreen> {
               ),
               Positioned(
                 top: 190.0,
-                left: 165.0,
+                left: 125.0,
                 child: Text(
-                  'Altwatzer 1',
+                  'Arwandi\'s Altwatzer',
                   style: GoogleFonts.inter(
                     color: Color(0xff808080),
                     fontSize: 15.0,

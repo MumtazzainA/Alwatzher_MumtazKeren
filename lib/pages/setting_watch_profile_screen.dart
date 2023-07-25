@@ -93,7 +93,7 @@ class _SettingProfileScreenState extends State<SettingWatchProfileScreen> {
               ),
               const SizedBox(height: 10),
               Text(
-                "Mr. Abudabu",
+                "Mr. Arwandi",
                 style: GoogleFonts.poppins(
                   textStyle: TextStyle(fontWeight: FontWeight.normal),
                 ),
@@ -134,7 +134,7 @@ class _SettingProfileScreenState extends State<SettingWatchProfileScreen> {
                       child: TextFormField(
                         controller: usernameController,
                         decoration: InputDecoration.collapsed(
-                          hintText: 'Username',
+                          hintText: 'Arwandi Fam',
                           hintStyle: TextStyle(
                             fontSize: 12,
                             fontWeight: FontWeight.w400,
@@ -175,7 +175,7 @@ class _SettingProfileScreenState extends State<SettingWatchProfileScreen> {
                       child: TextFormField(
                         controller: patientNameController,
                         decoration: InputDecoration.collapsed(
-                          hintText: 'Name',
+                          hintText: 'Arwandi',
                           hintStyle: TextStyle(
                             fontSize: 12,
                             fontWeight: FontWeight.w400,
@@ -216,7 +216,7 @@ class _SettingProfileScreenState extends State<SettingWatchProfileScreen> {
                       child: TextFormField(
                         controller: emergencyPhoneNumberController,
                         decoration: InputDecoration.collapsed(
-                          hintText: 'Phone Number',
+                          hintText: '+628123456789',
                           hintStyle: TextStyle(
                             fontSize: 12,
                             fontWeight: FontWeight.w400,
@@ -257,7 +257,7 @@ class _SettingProfileScreenState extends State<SettingWatchProfileScreen> {
                       child: TextFormField(
                         controller: addressController,
                         decoration: InputDecoration.collapsed(
-                          hintText: 'Address',
+                          hintText: 'Jl. Sukamaju Nomor 10',
                           hintStyle: TextStyle(
                             fontSize: 12,
                             fontWeight: FontWeight.w400,

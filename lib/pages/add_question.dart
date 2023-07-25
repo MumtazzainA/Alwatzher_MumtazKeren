@@ -99,7 +99,7 @@ class _AddQuestionScreenState extends State<AddQuestionScreen> {
               ),
               const SizedBox(height: 10),
               Text(
-                "Mr. Abudabu",
+                "Mr. Arwandi",
                 style: GoogleFonts.poppins(
                   textStyle: TextStyle(fontWeight: FontWeight.normal),
                 ),

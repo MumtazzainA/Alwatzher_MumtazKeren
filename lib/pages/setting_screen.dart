@@ -98,13 +98,13 @@ class _SettingScreenState extends State<SettingScreen> {
               ],
             ),
             Text(
-              "Name",
+              "Arwandi Family",
               style: GoogleFonts.poppins(
                 textStyle: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ),
             ),
             Text(
-              "Email@gmail.com",
+              "arwandifam@gmail.com",
               style: GoogleFonts.poppins(
                 textStyle: TextStyle(fontWeight: FontWeight.normal),
               ),

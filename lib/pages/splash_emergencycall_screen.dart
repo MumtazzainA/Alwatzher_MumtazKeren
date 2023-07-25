@@ -33,7 +33,7 @@ class _SplashEmergencyScreenState extends State<SplashEmergencyScreen> {
             children: [
               Positioned(
                 top: 140.0,
-                left: 142.0,
+                left: 130.0,
                 child: Text(
                   'Call Ended',
                   style: GoogleFonts.inter(
@@ -45,9 +45,9 @@ class _SplashEmergencyScreenState extends State<SplashEmergencyScreen> {
               ),
               Positioned(
                 top: 190.0,
-                left: 165.0,
+                left: 125.0,
                 child: Text(
-                  'Altwatzer 1',
+                  'Arwandi\'s Altwatzer',
                   style: GoogleFonts.inter(
                     color: Color.fromARGB(255, 38, 38, 38),
                     fontSize: 15.0,

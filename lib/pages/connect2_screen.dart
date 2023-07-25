@@ -42,7 +42,7 @@ class _Connect2ScreenState extends State<Connect2Screen> {
               child: Column(
                 children: [
                   Text(
-                    "Alwatzher Series 1",
+                    "Alwatzer Series 1",
                     style: GoogleFonts.inter(
                         textStyle: TextStyle(
                             fontSize: 16, fontWeight: FontWeight.w500)),

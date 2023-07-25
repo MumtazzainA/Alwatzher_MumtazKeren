@@ -99,7 +99,7 @@ class _EditQuestionScreenState extends State<EditQuestionScreen> {
               ),
               const SizedBox(height: 10),
               Text(
-                "Mr. Abudabu",
+                "Mr. Arwandi",
                 style: GoogleFonts.poppins(
                   textStyle: TextStyle(fontWeight: FontWeight.normal),
                 ),

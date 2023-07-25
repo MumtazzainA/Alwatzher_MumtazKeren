@@ -56,7 +56,7 @@ class MonitorScreen extends StatelessWidget {
                   width: 8,
                 ),
                 Text(
-                  "500 m dari kediaman Mr. Burhan",
+                  "500 m dari kediaman Mr. Arwandi",
                   style: GoogleFonts.dmSans(
                     fontSize: 18,
                     fontWeight: FontWeight.w500,

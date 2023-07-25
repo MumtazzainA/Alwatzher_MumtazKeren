@@ -64,7 +64,7 @@ class _ListScreenState extends State<WatchListScreen> {
                         ),
                       ),
                       title: Text(
-                        'Alwatzher Series 1',
+                        'Arwandi\'s Alwatzer',
                         style: GoogleFonts.inter(
                             textStyle: TextStyle(
                                 fontSize: 16, fontWeight: FontWeight.w500)),
@@ -85,7 +85,7 @@ class _ListScreenState extends State<WatchListScreen> {
                         child: Icon(Icons.watch, color: Colors.black),
                       ),
                       title: Text(
-                        'Alwatzher Series 2',
+                        'Alwatzer Series 2',
                         style: GoogleFonts.inter(
                             textStyle: TextStyle(
                                 fontSize: 16, fontWeight: FontWeight.w500)),
