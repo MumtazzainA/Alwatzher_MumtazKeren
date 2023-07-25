@@ -60,7 +60,7 @@ class _SetReminderScreenState extends State<SetActivityScreen> {
                           width: 5,
                         ),
                         Text(
-                          "Beed Time",
+                          "Bed Time",
                           style: GoogleFonts.dmSans(
                             fontSize: 16,
                             fontWeight: FontWeight.w500,
