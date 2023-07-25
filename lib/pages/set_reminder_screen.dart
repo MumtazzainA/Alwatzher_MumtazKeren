@@ -448,55 +448,30 @@ class _SetReminderScreenState extends State<SetReminderScreen> {
                   ),
                 ],
               ),
-            )
+            ),
+            ElevatedButton(
+              onPressed: () {
+                // Navigator.push(
+                //   context,
+                //   MaterialPageRoute(
+                //       builder: (context) =>
+                //           // SetActivityScreen()),
+                // );
+              },
+              child: Text(
+                "Save",
+                style: GoogleFonts.dmSans(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                ),
+              ),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Color(0xff4C88EC),
+              ),
+            ),
           ],
         ),
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        showUnselectedLabels: true,
-        iconSize: 25,
-        selectedItemColor: Color(0xff526CC8),
-        selectedFontSize: 15,
-        unselectedFontSize: 10,
-        unselectedItemColor: Colors.grey,
-        currentIndex: _currentIndex,
-        onTap: (int index) {
-          setState(() {
-            _currentIndex = index;
-          });
-
-          switch (index) {
-            case 0:
-              // Ketika item "Home" ditekan
-              Navigator.pushNamed(context, '/home');
-              break;
-            case 1:
-              // Ketika item "Setting" ditekan
-              Navigator.pushNamed(context, '/setting');
-              break;
-            case 2:
-              // Ketika item "Monitor" ditekan
-              Navigator.pushNamed(context, '/monitor');
-              break;
-            case 3:
-              // Ketika item "Watch" ditekan
-              Navigator.pushNamed(context, '/watch');
-              break;
-            case 4:
-              // Ketika item "Profile" ditekan
-              Navigator.pushNamed(context, '/profile');
-              break;
-          }
-        },
-        items: [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-          BottomNavigationBarItem(icon: Icon(Icons.settings), label: 'Setting'),
-          BottomNavigationBarItem(
-              icon: Icon(Icons.person_pin_circle, color: Colors.red),
-              label: 'Monitor'),
-          BottomNavigationBarItem(icon: Icon(Icons.watch), label: 'Watch'),
-          // BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Profile'),
-        ],
       ),
     );
   }

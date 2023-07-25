@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:jam/pages/list_of_activity_and_reminder_screen.dart';
-import 'package:jam/pages/percobaan.dart';
+import 'package:jam/pages/list_of_activity_and_reminder_screen.dart';
 
 class ReminderListScreen extends StatefulWidget {
   const ReminderListScreen({super.key});
