@@ -87,7 +87,7 @@ class MonitorScreen extends StatelessWidget {
                 Column(
                   children: [
                     Text(
-                      "Mr. Burhan",
+                      "Mr. Arwandi",
                       style: GoogleFonts.dmSans(
                         fontSize: 23,
                         fontWeight: FontWeight.w500,
@@ -115,7 +115,7 @@ class MonitorScreen extends StatelessWidget {
                   ],
                 ),
                 SizedBox(
-                  width: 25,
+                  width: 20,
                 ),
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
